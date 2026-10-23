@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dixkonary - Hielke AI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/webp" href="favicon.webp">
+    <script src="site.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="site-bar">
+            <a class="site-brand" href="index.html" aria-label="Hielke AI home">
+                <span class="brand-mark" aria-hidden="true"><span class="logo-placeholder">✳</span><img class="site-logo" src="logo.png" alt=""></span>
+                <span>hielke ai</span>
+            </a>
+            <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle colour theme" aria-pressed="false">☾ dark mode</button>
+        </div>
+        <h1>dixkonary</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">home</a>
+        <a href="about.html">about</a>
+        <a href="links.html">links</a>
+        <a href="contact.html">contact</a>
+        <a href="projects.html">projects</a>
+        <a href="sparx.html">sparx</a>
+        <a href="excuses.html">excuses</a>
+        <a href="definitions.html">dixkonary</a>
+        <a href="payment.html">payment</a>
+        <a href="https://discord.gg/SYGz4ZTkTZ">discord</a>
+    </nav>
+
+    <main>
+        <section class="home-hero" aria-labelledby="definitions-heading">
+            <p class="eyebrow"><span id="dict-total-count">380+</span> words · zero GCSEs · heavily loaded with AI roasts</p>
+            <h2 id="definitions-heading">The Unofficial Hielke AI Dixkonary</h2>
+            <p>Every word has a boring official dictionary definition. The Dixkonary replaces them with the brutal, unvarnished truth about AI, Silicon Valley drama, and everyday life. Cleaned of school homework fluff and packed with pure comedic gold.</p>
+        </section>
+
+        <section class="definition-panel panel" aria-labelledby="dotd-heading">
+            <div class="dotd-header">
+                <div>
+                    <p class="eyebrow" id="dotd-date-label">today's definition</p>
+                    <h2 id="dotd-heading">Definition of the Day</h2>
+                </div>
+                <span class="dotd-day-badge" id="dotd-day-badge">Entry #1</span>
+            </div>
+
+            <div class="dotd-card" aria-live="polite">
+                <p class="dotd-word" id="dotd-word">toaster</p>
+                <p class="dotd-definition" id="dotd-definition">A small metal friend that makes warm bread and occasionally tries to kill you by being placed near the sink.</p>
+            </div>
+
+            <div class="dotd-controls">
+                <button id="dotd-random-btn" class="payment-button" type="button">🎲 random definition</button>
+                <button id="dotd-today-btn" class="secondary-button" type="button">📅 today's definition</button>
+                <button id="dotd-copy-btn" class="secondary-button" type="button">📋 copy definition</button>
+                <span id="dotd-copy-feedback" class="copy-feedback" role="status" aria-live="polite" hidden>Copied!</span>
+            </div>
+        </section>
+
+        <section class="dictionary-browser panel" aria-labelledby="dict-browse-heading">
+            <h2 id="dict-browse-heading">Browse the Dixkonary</h2>
+            <p class="stat-caption">Search or filter through all entries alphabetically:</p>
+
+            <div class="dictionary-search-box">
+                <input type="search" id="dict-search" class="dictionary-search-input" placeholder="Search words or definitions (e.g. Claude, Mistral, GPU, toaster)..." aria-label="Search Dixkonary">
+            </div>
+
+            <div class="alphabet-bar" role="group" aria-label="Filter by letter">
+                <button type="button" class="alpha-btn active" data-letter="ALL">ALL</button>
+                <button type="button" class="alpha-btn" data-letter="A">A</button>
+                <button type="button" class="alpha-btn" data-letter="B">B</button>
+                <button type="button" class="alpha-btn" data-letter="C">C</button>
+                <button type="button" class="alpha-btn" data-letter="D">D</button>
+                <button type="button" class="alpha-btn" data-letter="E">E</button>
+                <button type="button" class="alpha-btn" data-letter="F">F</button>
+                <button type="button" class="alpha-btn" data-letter="G">G</button>
+                <button type="button" class="alpha-btn" data-letter="H">H</button>
+                <button type="button" class="alpha-btn" data-letter="I">I</button>
+                <button type="button" class="alpha-btn" data-letter="J">J</button>
+                <button type="button" class="alpha-btn" data-letter="K">K</button>
+                <button type="button" class="alpha-btn" data-letter="L">L</button>
+                <button type="button" class="alpha-btn" data-letter="M">M</button>
+                <button type="button" class="alpha-btn" data-letter="N">N</button>
+                <button type="button" class="alpha-btn" data-letter="O">O</button>
+                <button type="button" class="alpha-btn" data-letter="P">P</button>
+                <button type="button" class="alpha-btn" data-letter="Q">Q</button>
+                <button type="button" class="alpha-btn" data-letter="R">R</button>
+                <button type="button" class="alpha-btn" data-letter="S">S</button>
+                <button type="button" class="alpha-btn" data-letter="T">T</button>
+                <button type="button" class="alpha-btn" data-letter="U">U</button>
+                <button type="button" class="alpha-btn" data-letter="V">V</button>
+                <button type="button" class="alpha-btn" data-letter="W">W</button>
+                <button type="button" class="alpha-btn" data-letter="Y">Y</button>
+                <button type="button" class="alpha-btn" data-letter="Z">Z</button>
+            </div>
+
+            <div id="dict-grid" class="dict-entries-grid" aria-live="polite">
+                <!-- Loaded dynamically by site.js -->
+            </div>
+        </section>
+
+        <section class="home-notes" aria-label="Dixkonary highlights">
+            <article class="home-note">
+                <h3>🤖 Pure AI Roasts</h3>
+                <p>Featuring definitive guides to Anthropic's anxiety, Claude's constitutional apologies, Mistral's espresso-fueled speed, and NVIDIA's microchip empire.</p>
+            </article>
+            <article class="home-note">
+                <h3>🚫 100% GCSE-Free</h3>
+                <p>We purged every trace of detention, Sparx bookwork codes, and quadratic formulas. Only relevant tech, AI, and lifestyle truths remain.</p>
+            </article>
+            <article class="home-note">
+                <h3>⚡ Interactive Dixkonary</h3>
+                <p>Search any word or filter by letter to browse all entries. Click on any card in the dictionary to highlight it in the main viewer above!</p>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <nav class="footer-links" aria-label="Footer links">
+            <a href="index.html">home</a>
+            <a href="about.html">about</a>
+            <a href="links.html">links</a>
+            <a href="contact.html">contact</a>
+            <a href="projects.html">projects</a>
+            <a href="sparx.html">sparx</a>
+            <a href="excuses.html">excuses</a>
+            <a href="definitions.html">dixkonary</a>
+            <a href="payment.html">payment</a>
+            <a href="dashboard.html">dashboard</a>
+            <a href="https://discord.gg/SYGz4ZTkTZ">discord</a>
+            <a href="https://chat.mistral.ai">mistral</a>
+        </nav>
+        <p>last updated: 2026</p>
+    </footer>
+</body>
+</html>

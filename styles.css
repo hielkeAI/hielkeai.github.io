@@ -49,13 +49,33 @@
     color: var(--muted);
 }
 
+.disclaimer-box,
+.excuse-box {
+    margin: 26px 0;
+    padding: clamp(16px, 3vw, 30px);
+    border: 1px solid var(--line);
+    background: var(--surface);
+}
+
+.disclaimer-box {
+    border-left: 4px solid var(--accent);
+}
+
+.disclaimer-box h2,
+.disclaimer-box p {
+    margin-top: 0;
+}
+
+.disclaimer-box p {
+    margin-bottom: 0;
+    color: var(--muted);
+}
+
 .excuse-box {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
     align-items: center;
     gap: 12px 22px;
-    margin: 26px 0;
-    padding: clamp(16px, 3vw, 30px);
     border: 1px dashed var(--line);
     background: var(--surface-alt);
 }
@@ -78,6 +98,224 @@
 .excuse-box button,
 .theme-toggle {
     min-height: 42px;
+}
+
+/* Excuse Generator Styles */
+.excuse-generator-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 26px 0;
+}
+
+.category-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+.filter-btn {
+    min-height: 38px;
+    padding: 6px 12px;
+    border: 1px solid var(--line);
+    background: var(--surface-alt);
+    color: var(--ink);
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.filter-btn:hover {
+    border-color: var(--link);
+}
+
+.filter-btn.active {
+    background: var(--accent);
+    color: #192313;
+    border-color: var(--accent);
+}
+
+.excuse-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: clamp(16px, 3vw, 24px);
+    border: 2px dashed var(--line);
+    background: var(--surface-alt);
+    min-height: 120px;
+    justify-content: center;
+}
+
+.excuse-card-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.excuse-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    color: var(--link);
+    font-size: 0.82rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.excuse-badge[data-category="dog"] {
+    color: #ffb703;
+    border-color: #ffb703;
+}
+
+.excuse-badge[data-category="anthropic"] {
+    color: #ff9d8f;
+    border-color: #ff9d8f;
+}
+
+.excuse-badge[data-category="mistral"] {
+    color: #70d6ff;
+    border-color: #70d6ff;
+}
+
+.excuse-badge[data-category="platform"] {
+    color: #ff5d8f;
+    border-color: #ff5d8f;
+}
+
+.excuse-badge[data-category="tech"] {
+    color: #b388eb;
+    border-color: #b388eb;
+}
+
+.excuse-badge[data-category="mathsci"] {
+    color: #80ed99;
+    border-color: #80ed99;
+}
+
+.excuse-badge[data-category="procrastination"] {
+    color: #f7aef8;
+    border-color: #f7aef8;
+}
+
+.excuse-badge[data-category="classic"],
+.excuse-badge[data-category="funny"] {
+    color: var(--link);
+    border-color: var(--line);
+}
+    border-color: var(--line);
+}
+
+.excuse-text {
+    margin: 0;
+    font-size: clamp(1.05rem, 2vw, 1.35rem);
+    line-height: 1.5;
+    color: var(--ink);
+    font-style: italic;
+}
+
+.excuse-controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.copy-feedback {
+    color: var(--link);
+    font-weight: bold;
+    font-size: 0.9rem;
+    padding: 4px 8px;
+}
+
+.excuse-box-actions {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Definition of the Day */
+.definition-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 26px 0;
+}
+
+.dotd-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.dotd-header h2 {
+    margin: 0;
+}
+
+.dotd-day-badge {
+    display: inline-block;
+    padding: 5px 12px;
+    border: 1px solid var(--accent);
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-weight: bold;
+    font-size: 0.88rem;
+    white-space: nowrap;
+}
+
+.dotd-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: clamp(16px, 3vw, 26px);
+    border: 2px solid var(--line);
+    background: var(--surface);
+    min-height: 110px;
+    justify-content: center;
+}
+
+.dotd-word {
+    margin: 0;
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    font-weight: bold;
+    color: var(--link);
+    line-height: 1.2;
+}
+
+.dotd-word::before {
+    content: "📖 ";
+    font-size: 0.75em;
+}
+
+.dotd-definition {
+    margin: 0;
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    line-height: 1.6;
+    color: var(--ink);
+    font-style: italic;
+}
+
+.dotd-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.excuse-link-note {
+    margin: 0;
+    font-size: 0.88rem;
+}
+
+.excuse-link-note a {
+    color: var(--link);
 }
 
 @font-face {
@@ -662,4 +900,93 @@ footer .footer-links a {
         scroll-behavior: auto !important;
         transition-duration: 0.01ms !important;
     }
+}
+
+/* Dictionary Styles */
+.dictionary-search-box {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.dictionary-search-input {
+    flex: 1;
+    min-width: 220px;
+    min-height: 42px;
+    padding: 8px 14px;
+    border: 1px solid var(--line);
+    background: var(--surface-alt);
+    color: var(--ink);
+    font: inherit;
+    border-radius: 4px;
+}
+
+.alphabet-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin: 14px 0 6px;
+}
+
+.alpha-btn {
+    min-width: 32px;
+    height: 32px;
+    padding: 2px 6px;
+    border: 1px solid var(--line);
+    background: var(--surface-alt);
+    color: var(--ink);
+    font: inherit;
+    font-size: 0.85rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: all 0.15s ease;
+}
+
+.alpha-btn:hover, .alpha-btn.active {
+    background: var(--accent);
+    color: #192313;
+    border-color: var(--accent);
+}
+
+.dictionary-browser {
+    margin: 26px 0;
+}
+
+.dict-entries-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 14px;
+    margin-top: 16px;
+}
+
+.dict-entry-card {
+    padding: 14px 16px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    transition: transform 0.1s ease, border-color 0.15s ease;
+}
+
+.dict-entry-card:hover {
+    border-color: var(--link);
+    transform: translateY(-2px);
+}
+
+.dict-entry-word {
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: bold;
+    color: var(--link);
+}
+
+.dict-entry-def {
+    margin: 0;
+    font-size: 0.92rem;
+    color: var(--muted);
+    line-height: 1.5;
 }

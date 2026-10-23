@@ -3,14 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>no more sparx!!!</title>
+    <title>Hielke AI — homework help in Discord</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/webp" href="favicon.webp">
+    <script src="site.js" defer></script>
 </head>
 <body>
 
     <header>
-        <h1>welcome to my site :)</h1>
+        <div class="site-bar">
+            <a class="site-brand" href="index.html" aria-label="Hielke AI home">
+                <span class="brand-mark" aria-hidden="true"><span class="logo-placeholder">✳</span><img class="site-logo" src="logo.png" alt=""></span>
+                <span>hielke ai</span>
+            </a>
+            <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle colour theme" aria-pressed="false">☾ dark mode</button>
+        </div>
     </header>
 
     <nav>
@@ -20,18 +27,49 @@
         <a href="contact.html">contact</a>
         <a href="projects.html">projects</a>
         <a href="sparx.html">sparx</a>
-        <a href="dashboard.html">dashboard</a>
         <a href="payment.html">payment</a>
         <a href="https://discord.gg/SYGz4ZTkTZ">discord</a>
-        <a href="https://chat.mistral.ai">mistral</a>
     </nav>
 
     <main>
-        <p>hello! this is my personal page hosted on github pages.</p>
-        <p>i'm building this with plain html and a tiny bit of css—keeping it fast and simple.</p>
+        <section class="home-hero" aria-labelledby="home-heading">
+            <p class="eyebrow">hosted on GitHub Pages · powered by a Discord bot</p>
+            <h2 id="home-heading">Homework? Hand it to Hielke.</h2>
+            <p>Hielke AI is a Discord bot that does your homework for you. Drop your question into Discord and let the bot handle the working.</p>
+            <div class="hero-actions">
+                <a href="https://discord.gg/SYGz4ZTkTZ">find us on Discord</a>
+                <a href="about.html">what is Hielke AI?</a>
+            </div>
+        </section>
+        <section class="home-notes" aria-label="About Hielke AI">
+            <article class="home-note">
+                <h3>Bring the question</h3>
+                <p>Use the Discord community to ask about a tricky homework problem.</p>
+            </article>
+            <article class="home-note">
+                <h3>Homework handled</h3>
+                <p>Send a homework question to the bot and get its completed answer back in Discord.</p>
+            </article>
+            <article class="home-note">
+                <h3>Small project, big ideas</h3>
+                <p>Hielke AI is an independent project and is not affiliated with homework platforms.</p>
+            </article>
+        </section>
     </main>
 
     <footer>
+        <nav class="footer-links" aria-label="Footer links">
+            <a href="index.html">home</a>
+            <a href="about.html">about</a>
+            <a href="links.html">links</a>
+            <a href="contact.html">contact</a>
+            <a href="projects.html">projects</a>
+            <a href="sparx.html">sparx</a>
+            <a href="payment.html">payment</a>
+            <a href="dashboard.html">dashboard</a>
+            <a href="https://discord.gg/SYGz4ZTkTZ">discord</a>
+            <a href="https://chat.mistral.ai">mistral</a>
+        </nav>
         <p>last updated: 2026</p>
     </footer>
 

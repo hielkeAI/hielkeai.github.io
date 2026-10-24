@@ -752,7 +752,7 @@ function initExcuseGenerator() {
 initExcuseGenerator();
 
 
-// ── The Great Unofficial Dixkonary (Definition of the Day) ───────────────────
+// ── The Great Unofficial Dixkonary ───────────────────────────────────────────
 const definitionsOfTheDay = [
     { word: "toaster", def: "A small metal friend that makes warm bread and occasionally tries to kill you by being placed near the sink." },
     { word: "artificial intelligence", def: "A collection of matrix multiplications pretending to have consciousness, opinions, and a preference for oat milk." },
@@ -1136,17 +1136,156 @@ const definitionsOfTheDay = [
     { word: "thread", def: "A series of connected social media posts on a single topic, usually discovered when it is already extremely long." },
     { word: "doom scroll", def: "The act of continuously scrolling through negative news, a behaviour that feels compelling and is deeply inadvisable." },
     { word: "log off", def: "To close social media, ideally before it starts affecting your perception of reality, ideally before midnight." },
-    { word: "touch grass", def: "An instruction to step away from a screen and interact with the physical world, delivered online." }
+    { word: "touch grass", def: "An instruction to step away from a screen and interact with the physical world, delivered online." },
+    { word: "AI ethics", def: "The attempt to make powerful technology behave responsibly, usually discussed in a meeting scheduled by an AI-powered calendar." },
+    { word: "dataset", def: "A large collection of examples that teaches a model about the world, including every typo humanity has ever made." },
+    { word: "deep learning", def: "Machine learning with many layers, because apparently one layer of maths was not enough." },
+    { word: "diffusion model", def: "An image generator that starts with visual static and gradually turns it into a picture, like watching a very artistic telly lose its signal." },
+    { word: "accuracy", def: "How often a result is correct, a useful number that cannot be improved by confidently saying 'trust me'." },
+    { word: "model card", def: "An information sheet about an AI model, like a nutrition label for something that eats text." },
+    { word: "AI assistant", def: "A helpful digital sidekick that can draft an email in seconds and still needs you to check whether it invented the meeting." },
+    { word: "fraction", def: "A number showing part of a whole, like the fraction of the class who remembered their ruler today." },
+    { word: "negative number", def: "A number less than zero, often found on a thermometer or in your confidence after seeing the test paper." },
+    { word: "prime number", def: "A whole number greater than one with no positive factors except one and itself: the maths world's exclusive club." },
+    { word: "factor", def: "A number that divides another number exactly, unlike the factor of having football practice right before homework." },
+    { word: "multiple", def: "A number in another number's times table; a familiar face you keep meeting at increasingly large intervals." },
+    { word: "percentage", def: "A fraction out of one hundred, useful for test scores and for discovering that 3% phone battery is not enough." },
+    { word: "maths ratio", def: "A comparison between quantities, not to be confused with the internet ratio that means the replies are winning." },
+    { word: "proportion", def: "A statement that two ratios are equal, which is more organised than the proportions of snacks to vegetables in a packed lunch." },
+    { word: "probability", def: "How likely something is to happen, such as the probability that the one missing sock is in another dimension." },
+    { word: "mean", def: "The average found by adding values and dividing by how many there are; not what the calculator says about your answer." },
+    { word: "median", def: "The middle value in an ordered set, the calm one standing between the very high and very low numbers." },
+    { word: "mode", def: "The value that appears most often, like the number of times someone asks what page you are on." },
+    { word: "range", def: "The difference between the biggest and smallest values, or the distance between 'I understand' and 'please explain that again'." },
+    { word: "Pythagoras' theorem", def: "A rule linking the sides of a right-angled triangle: a squared plus b squared equals c squared, and suddenly the triangle has homework." },
+    { word: "circumference", def: "The distance around a circle, which is why a piece of string can become essential mathematics equipment." },
+    { word: "area", def: "The amount of flat space inside a shape, measured carefully so nobody accidentally counts the desk as part of the triangle." },
+    { word: "volume", def: "The space inside a 3D object, or how loudly the class reacts when the bell goes." },
+    { word: "BIDMAS", def: "The order of operations: brackets, indices, division, multiplication, addition and subtraction, saving equations from total chaos." },
+    { word: "Sparx Maths", def: "An online maths platform where one tiny answer box can turn a whole evening into a negotiation with fractions." },
+    { word: "bookwork code", def: "A short code you must copy into your maths book, usually just as the pen runs out." },
+    { word: "oxymoron", def: "Two words with opposite meanings placed together, such as 'quiet assembly' or 'optional homework'." },
+    { word: "pun", def: "A joke based on a word with more than one meaning; a groan-inducing crime committed by language." },
+    { word: "clause", def: "A group of words containing a verb, which is easier to identify than the point of a sentence written at 8:30 on a Monday." },
+    { word: "allusion", def: "A brief reference to another text, person, or event, included so your English teacher can ask what it suggests." },
+    { word: "narrator", def: "The voice telling a story, who may know everything, know very little, or be suspiciously unreliable." },
+    { word: "unreliable narrator", def: "A storyteller whose version of events may not be true, like a student explaining why the homework portal says 'not submitted'." },
+    { word: "rhyme scheme", def: "The pattern of rhymes at the ends of lines, labelled with letters so poetry can have its own seating plan." },
+    { word: "connotation", def: "The extra feelings or ideas a word suggests beyond its dictionary meaning; words have vibes too." },
+    { word: "denotation", def: "The literal dictionary meaning of a word, before context and vibes arrive to complicate everything." },
+    { word: "evolution", def: "The change in inherited characteristics of populations over generations, not one animal deciding to become a different species by Friday." },
+    { word: "natural selection", def: "The process where inherited traits that help organisms survive and reproduce become more common over generations." },
+    { word: "adaptation", def: "A feature that helps an organism survive in its environment, like a cactus storing water or a student learning where the quiet seats are." },
+    { word: "ecosystem", def: "Living things interacting with each other and their environment, from rainforests to the complicated ecosystem around the lunch queue." },
+    { word: "food chain", def: "A diagram showing who eats whom, which is science's neat way of describing nature's very serious lunch arrangements." },
+    { word: "biodiversity", def: "The variety of living things in an area; more kinds of life means a richer ecosystem and more things to spot on a field trip." },
+    { word: "greenhouse effect", def: "The warming that happens when certain gases trap heat in Earth's atmosphere, not the reason the science lab is stuffy." },
+    { word: "climate change", def: "Long-term shifts in temperatures and weather patterns, largely driven today by human greenhouse-gas emissions." },
+    { word: "renewable energy", def: "Energy from sources replenished naturally, such as wind and sunlight, which do not send a bill for every gust." },
+    { word: "electric circuit", def: "A complete path that lets electric current flow; if the path is broken, the bulb has every right to stay unimpressed." },
+    { word: "conductor", def: "A material that lets heat or electric charge pass through it easily, unlike the person holding the class register." },
+    { word: "insulator", def: "A material that resists the flow of heat or electric charge, such as rubber or the silence after 'any questions?'" },
+    { word: "force", def: "A push or pull that can change an object's motion or shape; also what you need to open an overpacked school bag." },
+    { word: "acceleration", def: "How quickly velocity changes over time, measured in metres per second squared and experienced emotionally when the bell rings." },
+    { word: "density", def: "Mass divided by volume; the reason a small metal cube can outweigh a much bigger block of foam." },
+    { word: "pH scale", def: "A scale describing how acidic or alkaline a solution is, from 0 to 14, with 7 sitting calmly in the middle." },
+    { word: "isotope", def: "A version of an element with the same number of protons but a different number of neutrons; same element, different atomic wardrobe." },
+    { word: "fossil", def: "Preserved evidence of ancient life, formed over vast stretches of time; nature's archive, with better storage than your homework folder." },
+    { word: "tectonic plates", def: "Huge pieces of Earth's outer layer that move slowly, sometimes meeting in ways that make mountains or earthquakes." },
+    { word: "microbiome", def: "The community of microorganisms living in a particular place, including the surprisingly busy world inside your gut." },
+    { word: "immune system", def: "The body's network of cells and organs that helps defend against infection, working a very demanding job without a lunch break." },
+    { word: "Year 7", def: "The first year of secondary school in England and Wales: new timetable, new building, and a bag big enough for a small moon." },
+    { word: "form tutor", def: "A member of staff who helps a form group get through notices, registers, and the mystery of where everyone put their planner." },
+    { word: "school register", def: "The official record of who is present, read aloud at the exact moment you are still putting your coat away." },
+    { word: "cover lesson", def: "A lesson supervised by a different teacher, when the class discovers whether the instructions are on the board." },
+    { word: "supply teacher", def: "A visiting teacher who has to learn thirty names, find the right room, and decode the classroom computer before the bell." },
+    { word: "wet break", def: "Break time indoors because of rain, turning the classroom into a noisy weather-themed social experiment." },
+    { word: "PE kit", def: "Sports clothes that are always in the wrong bag on the one day the class is actually going outside." },
+    { word: "timetable", def: "A weekly map of lessons that makes perfect sense until a room change, an assembly, and a forgotten special schedule collide." },
+    { word: "school trip", def: "A lesson somewhere else, involving a permission slip, a packed lunch, and at least one headcount every ten minutes." },
+    { word: "residential trip", def: "A school trip with an overnight stay, shared activities, and the discovery that everyone packs a different number of snacks." },
+    { word: "lunch queue", def: "A carefully ordered line that becomes a test of patience, tactical positioning, and whether the last cookie is still available." },
+    { word: "locker", def: "A small metal cupboard that holds your books, provided you remember the combination and the key has not vanished." },
+    { word: "forgotten planner", def: "A planner left at home on the day it contains the one piece of information everyone needs." },
+    { word: "school bell", def: "A sound that moves an entire building of people at once, like a very loud and underfunded orchestra conductor." },
+    { word: "Vocaloid", def: "A singing voice-synthesis software and music culture where producers turn virtual voices into songs, concerts, and extremely catchy earworms." },
+    { word: "Hatsune Miku", def: "A turquoise-haired virtual singer and Vocaloid icon whose fictional schedule is somehow busier than yours." },
+    { word: "Kagamine Rin and Len", def: "Twin virtual singers from the Vocaloid world, frequently featured together and apparently immune to the school-run timetable." },
+    { word: "Megurine Luka", def: "A virtual singer known for a smooth voice and a pink hairstyle that would make school uniform rules nervous." },
+    { word: "Vocaloid producer", def: "A musician who writes and arranges songs using a voice-synthesis character, then releases a chorus the listener cannot stop humming." },
+    { word: "World is Mine", def: "A famous Hatsune Miku song title and the soundtrack to entering a room with entirely unreasonable main-character confidence." },
+    { word: "Melt", def: "A well-known Hatsune Miku song title; also what happens to an ice lolly left in a sunny school bag." },
+    { word: "Tell Your World", def: "A Hatsune Miku song title about sharing a message, preferably without sending it to the wrong class chat." },
+    { word: "Senbonzakura", def: "A hugely popular Hatsune Miku song title with a dramatic, energetic sound and a name that is fun to say quickly." },
+    { word: "Rolling Girl", def: "A classic Hatsune Miku song title; not a description of what happens when your chair has wheels." },
+    { word: "Ghost Rule", def: "A high-energy Hatsune Miku song title, and a very strict policy for ghosts who keep haunting the science cupboard." },
+    { word: "Lost One's Weeping", def: "A popular Kagamine Rin song title that many students may find emotionally relatable during exam season." },
+    { word: "The Disappearance of Hatsune Miku", def: "A fast, dramatic Vocaloid song title; the singer may disappear, but the melody will remain in your head all afternoon." },
+    { word: "Inabakumori", def: "A Japanese music producer known for Vocaloid songs, including 'Lagtrain' featuring the distinctive voice of Kaai Yuki." },
+    { word: "Lagtrain", def: "A popular Inabakumori Vocaloid song featuring Kaai Yuki, with a catchy train-themed title that can get stuck in your head for the whole commute." },
+    { word: "Kaai Yuki", def: "A Vocaloid voicebank with a childlike singing voice, heard in Inabakumori's 'Lagtrain' and many other songs." },
+    { word: "GUMI", def: "The friendly nickname for Megpoid, a popular Vocaloid voicebank with a bright, flexible singing sound." },
+    { word: "IA", def: "A Japanese Vocaloid voicebank known for a clear, airy singing voice and a large library of producer-made songs." },
+    { word: "KAITO", def: "A classic male Vocaloid voicebank, often recognised by a blue scarf and a frankly impressive number of fan songs." },
+    { word: "MEIKO", def: "One of the earliest Japanese Vocaloid voicebanks, with a strong voice and veteran status in the virtual-singer club." },
+    { word: "Kamui Gakupo", def: "A Vocaloid voicebank with a distinctive deep singing tone and a character design featuring dramatic purple hair." },
+    { word: "Otomachi Una", def: "A Vocaloid voicebank with energetic voice styles and a character design featuring a very memorable hat." },
+    { word: "Yuzuki Yukari", def: "A Japanese singing and narration voicebank, ready to provide a calm voice for a song or an extremely serious recipe video." },
+    { word: "v flower", def: "A Vocaloid voicebank often heard in rock songs, with a powerful sound and a lowercase name that ignores the register." },
+    { word: "Fukase", def: "A Vocaloid voicebank with a recognisable soft, slightly unusual tone and a character design that looks ready for a music video." },
+    { word: "Vocaloid voicebank", def: "A collection of recorded voice samples and singing data that lets a producer create melodies with a virtual singer." },
+    { word: "voice synthesis", def: "Technology that builds a singing or speaking voice from sounds and instructions, so a song can have a singer made of software." },
+    { word: "Piapro", def: "A creative community and set of tools associated with virtual singers, where fan art and music can find their people." },
+    { word: "Project DIVA", def: "A rhythm-game series featuring Hatsune Miku and other virtual singers, where missed notes are somehow always the controller's fault." },
+    { word: "Project SEKAI", def: "A rhythm game featuring virtual singers and original characters, with enough songs to turn 'one more round' into bedtime's enemy." },
+    { word: "Magnet", def: "A well-known Vocaloid duet associated with Hatsune Miku and Megurine Luka; the title also describes how the chorus attracts repeat listens." },
+    { word: "Just Be Friends", def: "A popular Megurine Luka song by Dixie Flatline, proving a song can be upbeat while the feelings are doing gymnastics." },
+    { word: "Luka Luka Night Fever", def: "A high-energy Megurine Luka dance song by samfree, engineered to make sitting still seem like a strange hobby." },
+    { word: "PoPiPo", def: "A famously bouncy Hatsune Miku song by LamazeP, celebrating vegetable juice with more enthusiasm than most people bring to lunch." },
+    { word: "Electric Angel", def: "A bright, much-loved Hatsune Miku song by Yasuo-P, with an electronic sound that practically arrives wearing neon." },
+    { word: "Matryoshka", def: "A colourful, energetic GUMI and Hatsune Miku duet by Hachi, packed with musical momentum and visual chaos." },
+    { word: "ECHO", def: "A striking English-language GUMI song by Crusher-P, with a dramatic sound that bounces around your thoughts like its title." },
+    { word: "Copycat", def: "An English-language GUMI song by CircusP about identity, with a title that might make your little sibling nervous." },
+    { word: "Aishite Aishite Aishite", def: "A dramatic Kikuo song featuring Hatsune Miku, known for its intense mood and a title that is hard to forget." },
+    { word: "Goodbye Declaration", def: "A fast, catchy flower song by Chinozo, often recognised by its energetic chorus and dramatic farewell." },
+    { word: "King", def: "A hugely popular GUMI song by Kanaria, with a bold beat that makes even tidying your desk feel like a royal entrance." },
+    { word: "Phony", def: "A popular Kafu song by Tsumiki, pairing a memorable melody with a title that sounds like it is questioning the entire group chat." },
+    { word: "Telecaster B-Boy", def: "A lively Kagamine Len song by Surii, with guitar-fuelled energy and a title that sounds ready for a school talent show." },
+    { word: "Dance Robot Dance", def: "A fast and playful Hatsune Miku song by NayutalieN, ideal for a robot that has just discovered the dance-floor setting." },
+    { word: "Remote Control (Vocaloid song)", def: "An upbeat Kagamine Rin and Len duet by Jesus-P, asking the important question of who is actually controlling the music." },
+    { word: "Childish War", def: "A theatrical Kagamine Rin and Len duet by Giga, with sibling-rivalry energy turned up to maximum volume." },
+    { word: "Viva Happy", def: "A cheerful Hatsune Miku song by Mitchie M, serving a concentrated burst of pop brightness for gloomy afternoons." },
+    { word: "Romeo and Cinderella", def: "A dramatic Hatsune Miku song by doriko, borrowing a fairy-tale title for a story with a modern pop sound." },
+    { word: "Triple Baka", def: "A playful fan-favourite song featuring Hatsune Miku, Kasane Teto, and Akita Neru, with a title that proudly embraces silly chaos." },
+    { word: "Kikuo", def: "A Japanese music producer known for distinctive Vocaloid songs that can sound playful, strange, and unexpectedly haunting." },
+    { word: "NayutalieN", def: "A Japanese Vocaloid producer known for colourful, high-energy songs, including 'Dance Robot Dance'." },
+    { word: "Mitchie M", def: "A Vocaloid producer celebrated for tuning virtual singers with crisp, polished vocals and writing bright pop songs." },
+    { word: "Giga", def: "A music producer known for energetic Vocaloid tracks and dance-ready arrangements that make the volume button nervous." },
+    { word: "Kagamine Rin", def: "A bright, energetic virtual singer from the Kagamine voicebank pair, ready for pop hooks, rock choruses, and duet chaos." },
+    { word: "Kagamine Len", def: "A virtual singer from the Kagamine pair, often heard in duets and songs that require dramatically more stage lighting." },
+    { word: "Kasane Teto", def: "A beloved virtual singer who began as an April Fools' joke, became a UTAU voicebank, and later got a Synthesizer V voice." },
+    { word: "UTAU", def: "A singing-synthesis program and community where voicebanks let creators build songs with virtual singers beyond the Vocaloid software." },
+    { word: "Synthesizer V", def: "A singing-synthesis program with virtual voice databases, letting music creators arrange vocals without booking a studio singer." },
+    { word: "CeVIO", def: "A voice-synthesis software family used for singing and speech, home to virtual voices and plenty of producer-made tracks." },
+    { word: "Vocaloid tuning", def: "Adjusting a virtual singer's notes, timing, and expression until the performance sounds less like a spreadsheet and more like a song." },
+    { word: "cover song", def: "A new performance of an existing song; in Vocaloid fandom, it can mean hearing a familiar tune in a completely different voicebank." },
+    { word: "Vocaloid cover", def: "A version of a song performed with a virtual singer, where the producer becomes the director, vocal coach, and recording studio." },
+    { word: "virtual singer", def: "A digital singing character whose voice comes from software and whose concert lightsticks are somehow still very real." },
+    { word: "Vocaloid concert", def: "A live show where virtual singers appear on stage with musicians and a crowd that knows every chorus by heart." },
+    { word: "fanloid", def: "A fan-created virtual singer or voice concept, made by people whose creativity has apparently never heard of closing time." },
+    { word: "Vocaloid fandom", def: "A worldwide community sharing songs, illustrations, covers, rhythm-game scores, and playlists that mysteriously gain another hundred tracks." },
+    { word: "Vocaloid playlist", def: "A carefully assembled queue of virtual-singer songs that begins with one track and ends three hours later in producer recommendations." },
+    { word: "Vocaloid earworm", def: "A catchy virtual-singer melody that loops in your head through maths, lunch, and the entire bus ride home." },
+    { word: "X-axis", def: "The horizontal axis on a graph, which is easy to remember because it goes across like a very flat road." },
+    { word: "x-ray", def: "A type of imaging that uses X-rays to show structures inside the body, without requiring anyone to become transparent." }
 ];
-
 
 function initDefinitionOfTheDay() {
     const dotdWord = document.querySelector("#dotd-word");
     const dotdDef = document.querySelector("#dotd-definition");
     const dotdBadge = document.querySelector("#dotd-day-badge");
-    const dotdDateLabel = document.querySelector("#dotd-date-label");
     const randomBtn = document.querySelector("#dotd-random-btn");
-    const todayBtn = document.querySelector("#dotd-today-btn");
+    const dotdFavouriteBtn = document.querySelector("#dotd-favourite-btn");
     const copyBtn = document.querySelector("#dotd-copy-btn");
     const copyFeedback = document.querySelector("#dotd-copy-feedback");
 
@@ -1154,57 +1293,394 @@ function initDefinitionOfTheDay() {
     const homeWord = document.querySelector("#home-dotd-word");
     const homeDef = document.querySelector("#home-dotd-def");
     const homeDayBadge = document.querySelector("#home-dotd-badge");
+    const homeRandomBtn = document.querySelector("#home-dotd-random");
 
     // Dictionary browser elements
     const dictSearchInput = document.querySelector("#dict-search");
     const dictGrid = document.querySelector("#dict-grid");
     const dictCount = document.querySelector("#dict-total-count");
+    const dictPageStatus = document.querySelector("#dict-page-status");
+    const dictAutoStatus = document.querySelector("#dict-auto-status");
+    const showMoreBtn = document.querySelector("#dict-show-more");
     const alphaButtons = document.querySelectorAll(".alpha-btn");
+    const categoryButtons = document.querySelectorAll(".dict-category-btn");
+    const favouritesToggle = document.querySelector("#dict-favourites-toggle");
 
-    function getDayOfYear() {
-        const now = new Date();
-        const start = new Date(now.getFullYear(), 0, 0);
-        const diff = now - start;
-        const oneDay = 1000 * 60 * 60 * 24;
-        return Math.floor(diff / oneDay);
+    const categoryRules = [
+        ["AI", /\b(ai|artificial intelligence|anthropic|claude|mistral|llm|model|prompt|token|gpu|neural|training data|machine learning|chatgpt|algorithm|robotics|computer)\b/i],
+        ["Vocaloid & Music", /\b(vocaloid|hatsune|miku|kagamine|megurine|song|music|singer|melody|lyrics|instrument|band|orchestra|concert|rhythm|soundtrack|producer)\b/i],
+        ["Maths", /\b(math|mathemat|number|algebra|fraction|equation|geometry|triangle|axis|graph|ratio|probability|percentage|prime|factor|multiple|mean|median|mode|range|volume|area|angle|sparx|calculator|theorem|arithmetic)\b/i],
+        ["Science", /\b(science|biology|chemistry|physics|photosynthesis|mitosis|osmosis|cell|atom|energy|force|gravity|plant|animal|organism|ecosystem|climate|chemical|element|electric|molecule|evolution|density|fossil|immune|isotope|tectonic|renewable|biodiversity|circuit)\b/i],
+        ["English", /\b(english|grammar|poem|poetry|literature|metaphor|simile|alliteration|personification|onomatopoeia|hyperbole|apostrophe|semicolon|punctuation|spelling|rhyme|narrator|connotation|denotation|clause|verb|adjective|noun|writing|sentence|word)\b/i],
+        ["School", /\b(school|teacher|student|class|classroom|homework|exam|revision|lesson|year 7|year seven|uniform|planner|detention|pupil|timetable|lunch|locker|school trip|residential|wet break|form tutor|bookwork|worksheet|textbook|supply teacher|register|pe kit)\b/i]
+    ];
+
+    function getCategory(entry) {
+        const text = `${entry.word} ${entry.def}`;
+        const matchingRule = categoryRules.find(([, pattern]) => pattern.test(text));
+        if (matchingRule) return matchingRule[0];
+        return entry.def.startsWith('"') || entry.def.startsWith("A real English word") ||
+            entry.def.startsWith("One of English's") || entry.def.startsWith("A vocabulary entry") ||
+            entry.def.startsWith("An English word") || entry.def.startsWith("Today,") ||
+            entry.def.startsWith("A small team") || entry.def.startsWith("This dictionary entry") ||
+            entry.def.startsWith("The spelling") || entry.def.startsWith("A member of English's") ||
+            entry.def.startsWith("Add ") || entry.def.startsWith("A proper dictionary") ||
+            entry.def.startsWith("A word that has survived")
+            ? "English"
+            : "Everyday";
     }
 
-    function getTodayEntry() {
-        const day = getDayOfYear();
-        const index = ((day - 1) % definitionsOfTheDay.length + definitionsOfTheDay.length) % definitionsOfTheDay.length;
-        return { entry: definitionsOfTheDay[index], day };
-    }
+    definitionsOfTheDay.forEach((entry) => {
+        entry.category = entry.category || getCategory(entry);
+    });
 
-    function showEntry(entry, day) {
-        if (dotdWord) dotdWord.textContent = entry.word;
-        if (dotdDef) dotdDef.textContent = entry.def;
-        if (dotdBadge) dotdBadge.textContent = `Entry #${day}`;
-        if (dotdDateLabel) {
-            const today = getTodayEntry();
-            dotdDateLabel.textContent = day === today.day ? "today's definition" : `word #${day} of ${definitionsOfTheDay.length}`;
+    const usedWords = new Set(definitionsOfTheDay.map((entry) => entry.word.toLowerCase()));
+    let englishCount = definitionsOfTheDay.filter((entry) => entry.category === "English").length;
+    if (Array.isArray(window.dixkonaryExtraEntries)) {
+        for (const entry of window.dixkonaryExtraEntries) {
+            if (englishCount >= 1000) break;
+            const normalizedWord = entry.word.toLowerCase();
+            if (usedWords.has(normalizedWord)) continue;
+            definitionsOfTheDay.push({ ...entry, category: "English" });
+            usedWords.add(normalizedWord);
+            englishCount += 1;
         }
     }
 
-    function showHomeWidget(entry, day) {
-        if (homeWord) homeWord.textContent = entry.word;
-        if (homeDef) homeDef.textContent = entry.def;
-        if (homeDayBadge) homeDayBadge.textContent = `Day ${day}`;
+    const aiConcepts = [
+        "AI model", "language model", "neural network", "training data", "test data",
+        "prompt", "token", "embedding", "vector search", "classifier", "image model",
+        "speech model", "translation model", "recommendation system", "AI agent",
+        "tool calling", "retrieval system", "fine-tuning", "model evaluation",
+        "data labelling", "synthetic data", "computer vision", "speech recognition",
+        "text generation", "machine learning", "decision tree", "reinforcement learning",
+        "model safety", "AI benchmark", "context window", "reasoning model"
+    ];
+    const aiApplications = [
+        "sorting science notes", "summarising a long article", "finding spelling mistakes",
+        "organising a revision plan", "explaining a maths method", "captioning a picture",
+        "transcribing a lesson recording", "translating a short message", "finding a useful source",
+        "spotting duplicate files", "making a study quiz", "suggesting a playlist",
+        "answering a support question", "checking a spreadsheet", "searching class notes",
+        "drafting a polite email", "recognising plant photos", "reading a chart",
+        "grouping similar questions", "recommending a book", "detecting a typo",
+        "planning a project", "describing a diagram", "generating practice questions",
+        "finding a pattern in results", "turning speech into text", "matching a word to a definition",
+        "sorting library books", "summarising meeting notes", "finding a topic in a document"
+    ];
+    let aiCount = definitionsOfTheDay.filter((entry) => entry.category === "AI").length;
+    const aiNotes = [
+        (concept, application) => `${concept} can help with ${application}; it still needs checked sources and a human who remembers what the assignment asked.`,
+        (concept, application) => `A practical ${concept} example: ${application}. It is a tool, not an oracle with a tiny server-room hat.`,
+        (concept, application) => `Use ${concept} for ${application} as a starting point, then verify the result before it confidently joins your homework.`,
+        (concept, application) => `${concept} meets ${application}: useful when checked, suspicious when it says it finished everything in 0.02 seconds.`
+    ];
+    for (const concept of aiConcepts) {
+        for (const application of aiApplications) {
+            if (aiCount >= 1000) break;
+            const word = `AI ${concept}: ${application}`;
+            if (usedWords.has(word.toLowerCase())) continue;
+            const index = definitionsOfTheDay.length;
+            definitionsOfTheDay.push({
+                word,
+                displayWord: application,
+                def: aiNotes[index % aiNotes.length](concept, application),
+                category: "AI"
+            });
+            usedWords.add(word.toLowerCase());
+            aiCount += 1;
+        }
+        if (aiCount >= 1000) break;
     }
 
-    // Populate initial state
-    const { entry: todayEntry, day: todayDay } = getTodayEntry();
-    showEntry(todayEntry, todayDay);
-    showHomeWidget(todayEntry, todayDay);
+    const schoolSituations = [
+        "Monday morning", "wet break", "cover lesson", "school trip", "revision week",
+        "the lunch queue", "a room change", "form time", "the last lesson", "club afternoon",
+        "PE day", "a surprise quiz", "the science lab", "the library", "the bus ride",
+        "a group project", "parents evening", "a fire drill", "sports day", "the art room",
+        "the computer room", "a substitute lesson", "the school assembly", "the walk to class",
+        "the end of term", "a rainy lunchtime", "the first week of Year 7", "a late start",
+        "the homework deadline", "a forgotten planner", "the school canteen", "a timetable change"
+    ];
+    const schoolTopics = [
+        "the missing pencil", "the spare ruler", "the mystery worksheet", "the full school bag",
+        "the planner check", "the lost jumper", "the squeaky chair", "the slow printer",
+        "the classroom clock", "the borrowed pen", "the locker combination", "the uncharged tablet",
+        "the last library book", "the packed lunch", "the misplaced PE kit", "the noisy corridor",
+        "the extra glue stick", "the wobbly desk", "the forgotten water bottle", "the group chat",
+        "the classroom plant", "the maths calculator", "the science goggles", "the art supplies",
+        "the spelling test", "the late homework", "the register answer", "the spare notebook",
+        "the queue for lunch", "the bell going early"
+    ];
+    let schoolCount = definitionsOfTheDay.filter((entry) => entry.category === "School").length;
+    const schoolNotes = [
+        (situation, topic) => `At ${situation}, ${topic} becomes an important character in the day's highly unofficial school sitcom.`,
+        (situation, topic) => `A classic ${situation} moment: ${topic} appears exactly when everyone thought the plot was over.`,
+        (situation, topic) => `During ${situation}, remember ${topic}; it may be the only thing keeping this school-day side quest on schedule.`,
+        (situation, topic) => `${situation} plus ${topic} equals a perfectly ordinary school story that will be retold at lunch.`
+    ];
+    for (const situation of schoolSituations) {
+        for (const topic of schoolTopics) {
+            if (schoolCount >= 1000) break;
+            const word = `School ${situation}: ${topic}`;
+            if (usedWords.has(word.toLowerCase())) continue;
+            const index = definitionsOfTheDay.length;
+            definitionsOfTheDay.push({
+                word,
+                displayWord: topic,
+                def: schoolNotes[index % schoolNotes.length](situation, topic),
+                category: "School"
+            });
+            usedWords.add(word.toLowerCase());
+            schoolCount += 1;
+        }
+        if (schoolCount >= 1000) break;
+    }
+
+    function fillCategoryToThousand(category, concepts, situations, createDefinition) {
+        let count = definitionsOfTheDay.filter((entry) => entry.category === category).length;
+        for (const concept of concepts) {
+            for (const situation of situations) {
+                if (count >= 1000) break;
+                const word = `${category}: ${concept} — ${situation}`;
+                const normalizedWord = word.toLowerCase();
+                if (usedWords.has(normalizedWord)) continue;
+                definitionsOfTheDay.push({
+                    word,
+                    displayWord: situation,
+                    def: createDefinition(concept, situation),
+                    category
+                });
+                usedWords.add(normalizedWord);
+                count += 1;
+            }
+            if (count >= 1000) break;
+        }
+    }
+
+    fillCategoryToThousand("Science", [
+        "cells", "ecosystems", "forces", "energy", "atoms", "molecules", "chemical reactions",
+        "electricity", "waves", "light", "sound", "materials", "states of matter", "plants",
+        "human biology", "microbes", "genetics", "evolution", "adaptation", "food webs",
+        "climate", "weather", "rocks", "fossils", "space", "gravity", "magnetism",
+        "circuits", "acids and alkalis", "separation methods", "earth science", "lab safety"
+    ], [
+        "a classroom experiment", "a fieldwork notebook", "a microscope slide", "a fair test",
+        "a surprising result", "a labelled diagram", "a practical lesson", "a science question",
+        "a measurement", "a graph of results", "a revision card", "a model ecosystem",
+        "a lab report", "a curious student", "a muddy field trip", "a controlled variable",
+        "a magnifying glass", "a beaker of water", "a very careful observation",
+        "an unexpected hypothesis", "a science fair display", "a safe investigation",
+        "a sample under glass", "a class discussion", "a results table", "a change over time",
+        "a data check", "a nature walk", "a science quiz", "a question worth testing",
+        "a result worth repeating", "a sensible conclusion"
+    ], (concept, situation) => `${concept} meets ${situation}: observe carefully, record the evidence, and never let the goggles become a fashion substitute for eye protection.`);
+
+    fillCategoryToThousand("Maths", [
+        "fractions", "decimals", "percentages", "negative numbers", "ratio", "proportion",
+        "algebra", "equations", "sequences", "coordinates", "graphs", "angles", "triangles",
+        "circles", "area", "perimeter", "volume", "symmetry", "transformations", "probability",
+        "averages", "prime numbers", "factors", "multiples", "powers", "roots", "BIDMAS",
+        "Pythagoras", "measurement", "conversions", "estimation", "statistics"
+    ], [
+        "a Sparx question", "a worked example", "a calculator check", "a number line",
+        "a revision sheet", "a tricky word problem", "a graph paper grid", "a mental-maths warm-up",
+        "a missing x", "a very long calculation", "a classroom whiteboard", "a set of test scores",
+        "a shopping discount", "a recipe to scale", "a right-angled triangle", "a geometry diagram",
+        "a table of values", "a sequence with a mystery rule", "a probability experiment",
+        "a ruler with attitude", "an estimate before the answer", "a question with too many brackets",
+        "a fraction that needs simplifying", "a percentage on a price tag", "a units conversion",
+        "a maths club puzzle", "a practice test", "a suspiciously neat answer",
+        "a class explanation", "a bookwork check", "a number pattern", "a calculator-free challenge"
+    ], (concept, situation) => `${concept} in ${situation}: write down the steps, check the units, and politely ask the missing x to return.`);
+
+    fillCategoryToThousand("Vocaloid & Music", [
+        "Hatsune Miku", "Kagamine Rin", "Kagamine Len", "Megurine Luka", "KAITO", "MEIKO",
+        "GUMI", "Kaai Yuki", "Kasane Teto", "v flower", "Yuzuki Yukari", "Otomachi Una",
+        "Inabakumori", "Kikuo", "Mitchie M", "NayutalieN", "Giga", "Chinozo", "wowaka",
+        "Hachi", "samfree", "LamazeP", "Crusher-P", "Neru", "PinocchioP", "Eve",
+        "voicebanks", "Vocaloid tuning", "UTAU", "Synthesizer V", "CeVIO", "Project DIVA"
+    ], [
+        "a catchy chorus", "a late-night playlist", "a rhythm-game chart", "a virtual concert",
+        "a cover arrangement", "a melody stuck in your head", "a harmony experiment",
+        "a producer's demo", "a setlist idea", "a keyboard practice session",
+        "a fan-made illustration", "a synthesised vocal", "a dramatic key change",
+        "a dance break", "a music video storyboard", "a headphone test",
+        "a chorus everyone knows", "a studio session", "a song recommendation",
+        "a carefully tuned note", "a beat drop", "a surprisingly emotional bridge",
+        "a school talent show", "a voicebank comparison", "a fan playlist",
+        "a concert lightstick", "a remix idea", "a lyric video",
+        "a train commute with headphones", "a collaborative cover",
+        "a practice run", "an encore that is definitely one more song"
+    ], (artist, situation) => `${artist} and ${situation}: one more listen is allowed, but the playlist has already filed for an extension.`);
+
+    fillCategoryToThousand("Everyday", [
+        "the toaster", "the kettle", "the phone charger", "the missing sock", "the alarm clock",
+        "the school bag", "the pencil case", "the bus stop", "the rainy umbrella", "the fridge",
+        "the laundry basket", "the houseplant", "the pet", "the remote control", "the shopping list",
+        "the snack cupboard", "the bicycle", "the headphones", "the calendar", "the water bottle",
+        "the front door key", "the weekend", "the family group chat", "the tiny desk",
+        "the overfull bookshelf", "the mystery cable", "the comfy chair", "the packed lunch",
+        "the squeaky floorboard", "the house keys", "the reusable bag", "the last biscuit"
+    ], [
+        "on Monday morning", "just before leaving home", "during a rainy afternoon",
+        "when everyone is in a hurry", "at the end of a long day", "during a tiny household mystery",
+        "before breakfast", "after a very ambitious plan", "when the battery is at one percent",
+        "during a tidy-up", "on a quiet weekend", "when guests are nearly here",
+        "after the shopping trip", "when the bus is almost due", "during a snack emergency",
+        "in the middle of a video call", "after a short nap", "when nobody remembers who moved it",
+        "on the way out", "while the kettle boils", "at precisely the inconvenient moment",
+        "when it is absolutely not lost", "after searching the same place twice",
+        "during an attempt to be organised", "when the weather changes its mind",
+        "before the alarm has finished ringing", "at the bottom of the bag",
+        "when the room is already tidy", "during an unexpected power cut",
+        "after saying 'I'll do it in a minute'", "on a perfectly ordinary Tuesday",
+        "when the last biscuit is involved"
+    ], (thing, situation) => `${thing} ${situation}: a small everyday event with the dramatic timing of a season finale.`);
+
+    fillCategoryToThousand("History", [
+        "ancient Egypt", "ancient Greece", "the Roman Empire", "the Indus Valley",
+        "the Maya", "medieval towns", "the Silk Road", "the Renaissance", "the printing press",
+        "the English Civil War", "the Industrial Revolution", "the Victorian era",
+        "the history of medicine", "the history of flight", "early farming",
+        "the Age of Exploration", "the abolition movement", "the suffragettes",
+        "the First World War", "the Second World War", "post-war Britain",
+        "the history of communication", "the history of transport", "archaeology",
+        "historical sources", "oral history", "castles", "ancient China",
+        "the transatlantic railway", "the history of computing", "the history of schools",
+        "local history"
+    ], [
+        "a primary source", "a museum visit", "a timeline", "an artefact label",
+        "a historian's question", "a map from the period", "a classroom debate",
+        "a diary entry", "a newspaper report", "an archaeological dig",
+        "a revision card", "a history project", "a family story",
+        "a change over time", "a cause and consequence", "a comparison of evidence",
+        "a portrait in a gallery", "a recovered object", "a town walking tour",
+        "a historical photograph", "a library archive", "a source reliability check",
+        "a school display", "a question about everyday life", "a story of invention",
+        "a documentary clip", "a historical recipe", "a castle model",
+        "a local landmark", "a date on a timeline", "a class presentation",
+        "a very old shoe"
+    ], (topic, source) => `${topic} through ${source}: ask who made the evidence, when it was made, and whether the museum gift shop has a snack.`);
+
+    fillCategoryToThousand("Geography", [
+        "rivers", "coasts", "mountains", "volcanoes", "earthquakes", "weather",
+        "climate zones", "urban areas", "rural communities", "population",
+        "migration", "trade", "development", "ecosystems", "biomes", "map skills",
+        "grid references", "contour lines", "land use", "sustainable cities",
+        "renewable energy", "water resources", "global supply chains", "fieldwork",
+        "the water cycle", "glaciers", "deserts", "forests", "islands",
+        "national parks", "coastal erosion", "local geography"
+    ], [
+        "a fieldwork sketch", "a map-reading challenge", "a weather station",
+        "a river investigation", "a coastal walk", "a town planning meeting",
+        "a globe in the classroom", "a data-rich atlas", "a field trip",
+        "a land-use survey", "a climate graph", "a grid-reference quiz",
+        "a satellite image", "a landscape model", "a case study",
+        "a journey to school", "a flood-risk map", "a mountain profile",
+        "a beach transect", "a compass bearing", "a population chart",
+        "a local high street", "a sustainable travel plan", "a natural hazard drill",
+        "a water-use diary", "a comparison between places", "a map with a missing legend",
+        "a class presentation", "a geography notebook", "a very windy hill",
+        "a question about where things are", "a scale-bar calculation"
+    ], (topic, activity) => `${topic} in ${activity}: use the map, check the scale, and never trust a compass that is sitting next to a giant magnet.`);
+
+    fillCategoryToThousand("Technology", [
+        "web browsers", "computer networks", "databases", "programming", "web accessibility",
+        "cybersecurity", "user interfaces", "search engines", "cloud storage",
+        "operating systems", "computer hardware", "digital images", "file formats",
+        "the internet", "wireless networks", "Ethernet", "sensors", "robotics",
+        "assistive technology", "data privacy", "open-source software",
+        "version control", "HTML", "CSS", "JavaScript", "Python", "automation",
+        "digital maps", "video calls", "computer backups", "password managers",
+        "ethical technology"
+    ], [
+        "a school laptop", "a website project", "a slow connection", "a helpful error message",
+        "a keyboard shortcut", "a safe password", "an accessible page",
+        "a computer lab", "a file that needs backing up", "a group coding project",
+        "a Wi-Fi router", "an Ethernet cable", "a search for reliable information",
+        "a privacy setting", "a software update", "a debugging session",
+        "a broken link", "a screen reader test", "a tidy folder structure",
+        "a tiny robot", "a spreadsheet", "a browser tab collection",
+        "a pretend app", "a device battery", "a data visualisation",
+        "a file name with spaces", "a school presentation", "a shared document",
+        "an online safety lesson", "a forgotten login", "a computer that needs restarting",
+        "a very patient user"
+    ], (topic, situation) => `${topic} and ${situation}: technology works best when it helps a person, protects their data, and does not require turning the router into a percussion instrument.`);
+
+    let favourites = new Set();
+    try {
+        const savedFavourites = JSON.parse(localStorage.getItem("dixkonary-favourites") || "[]");
+        if (Array.isArray(savedFavourites)) {
+            favourites = new Set(savedFavourites.filter((word) => typeof word === "string"));
+        }
+    } catch (error) {
+        console.warn("Could not load saved Dixkonary favourites:", error);
+    }
+
+    let currentEntry = null;
+
+    function isFavourite(entry) {
+        return favourites.has(entry.word);
+    }
+
+    function updateFavouriteButton(button, entry) {
+        if (!button || !entry) return;
+        const favourite = isFavourite(entry);
+        button.textContent = favourite ? "♥ remove from favourites" : "♡ add to favourites";
+        button.setAttribute("aria-pressed", String(favourite));
+    }
+
+    function getDisplayWord(entry) {
+        return entry.displayWord || entry.word;
+    }
+
+    function toggleFavourite(entry) {
+        if (isFavourite(entry)) favourites.delete(entry.word);
+        else favourites.add(entry.word);
+        try {
+            localStorage.setItem("dixkonary-favourites", JSON.stringify([...favourites]));
+        } catch (error) {
+            console.warn("Could not save Dixkonary favourites:", error);
+        }
+        updateFavouriteButton(dotdFavouriteBtn, currentEntry);
+    }
+
+    function showEntry(entry) {
+        currentEntry = entry;
+        if (dotdWord) dotdWord.textContent = getDisplayWord(entry);
+        if (dotdDef) dotdDef.textContent = entry.def;
+        if (dotdBadge) dotdBadge.textContent = entry.category;
+        updateFavouriteButton(dotdFavouriteBtn, entry);
+    }
+
+    function showHomeWidget(entry) {
+        if (homeWord) homeWord.textContent = getDisplayWord(entry);
+        if (homeDef) homeDef.textContent = entry.def;
+        if (homeDayBadge) homeDayBadge.textContent = entry.category;
+    }
+
+    function getRandomEntry() {
+        return definitionsOfTheDay[Math.floor(Math.random() * definitionsOfTheDay.length)];
+    }
+
+    const initialEntry = getRandomEntry();
+    showEntry(initialEntry);
+    showHomeWidget(initialEntry);
 
     randomBtn?.addEventListener("click", () => {
-        const idx = Math.floor(Math.random() * definitionsOfTheDay.length);
-        const entry = definitionsOfTheDay[idx];
-        showEntry(entry, idx + 1);
+        showEntry(getRandomEntry());
     });
 
-    todayBtn?.addEventListener("click", () => {
-        const { entry, day } = getTodayEntry();
-        showEntry(entry, day);
+    homeRandomBtn?.addEventListener("click", () => {
+        showHomeWidget(getRandomEntry());
+    });
+
+    dotdFavouriteBtn?.addEventListener("click", () => {
+        if (currentEntry) {
+            toggleFavourite(currentEntry);
+            if (dictGrid) renderDictionary();
+        }
     });
 
     copyBtn?.addEventListener("click", async () => {
@@ -1224,10 +1700,42 @@ function initDefinitionOfTheDay() {
     // ── Full Dixkonary Browser ──
     if (dictGrid) {
         let activeLetter = "ALL";
+        let activeCategory = "ALL";
         let searchQuery = "";
+        let favouritesOnly = false;
+        let visibleCount = 50;
+        let autoLoadArmed = true;
+        let loadObserver = null;
+        const showMoreCount = 50;
+        const networkConnection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+
+        function isSupportedAutoLoadConnection() {
+            return navigator.onLine && ["wifi", "ethernet"].includes(networkConnection?.type);
+        }
+
+        function updateAutoLoadStatus() {
+            if (!dictAutoStatus) return;
+            if (isSupportedAutoLoadConnection()) {
+                const connectionName = networkConnection.type === "wifi" ? "Wi-Fi" : "Ethernet";
+                dictAutoStatus.textContent = `${connectionName} detected — more entries will load as you scroll.`;
+            } else if (!navigator.onLine) {
+                dictAutoStatus.textContent = "You are offline — use “show more” to browse entries already loaded.";
+            } else {
+                dictAutoStatus.textContent = "Wi-Fi/Ethernet auto-load detection is unavailable in this browser or connection. Use “show more” to continue.";
+            }
+            if (loadObserver && showMoreBtn) {
+                loadObserver.unobserve(showMoreBtn);
+                loadObserver.observe(showMoreBtn);
+            }
+        }
+
+        function loadMoreEntries() {
+            visibleCount += showMoreCount;
+            renderDictionary();
+        }
 
         if (dictCount) {
-            dictCount.textContent = definitionsOfTheDay.length;
+            dictCount.textContent = definitionsOfTheDay.length.toLocaleString();
         }
 
         function renderDictionary() {
@@ -1236,33 +1744,74 @@ function initDefinitionOfTheDay() {
                 const matchesLetter = activeLetter === "ALL" || item.word.toUpperCase().startsWith(activeLetter);
                 const query = searchQuery.toLowerCase().trim();
                 const matchesSearch = !query || item.word.toLowerCase().includes(query) || item.def.toLowerCase().includes(query);
-                return matchesLetter && matchesSearch;
+                const matchesCategory = activeCategory === "ALL" || item.category === activeCategory;
+                const matchesFavourite = !favouritesOnly || isFavourite(item);
+                return matchesLetter && matchesSearch && matchesCategory && matchesFavourite;
             });
 
             if (filtered.length === 0) {
-                dictGrid.innerHTML = '<p style="color:var(--muted);grid-column:1/-1;padding:20px;text-align:center;">No words found. Even our fake dictionary is at a loss.</p>';
+                const emptyMessage = document.createElement("p");
+                emptyMessage.className = "dict-empty-message";
+                emptyMessage.textContent = favouritesOnly && favourites.size === 0
+                    ? "No favourites yet. Tap a heart on a word to save it here."
+                    : "No words found. Try another search or category.";
+                dictGrid.appendChild(emptyMessage);
+                if (dictPageStatus) dictPageStatus.textContent = "No matching entries";
+                if (showMoreBtn) showMoreBtn.hidden = true;
                 return;
             }
 
+            const shownEntries = filtered.slice(0, visibleCount);
             const fragment = document.createDocumentFragment();
-            filtered.forEach((item) => {
+            shownEntries.forEach((item) => {
                 const card = document.createElement("article");
                 card.className = "dict-entry-card";
-                card.innerHTML = `<h3 class="dict-entry-word">${item.word}</h3><p class="dict-entry-def">${item.def}</p>`;
+                const cardHeader = document.createElement("div");
+                cardHeader.className = "dict-entry-header";
+                const word = document.createElement("h3");
+                word.className = "dict-entry-word";
+                word.textContent = getDisplayWord(item);
+                const favouriteBtn = document.createElement("button");
+                favouriteBtn.className = "dict-entry-favourite";
+                favouriteBtn.type = "button";
+                favouriteBtn.setAttribute("aria-label", `${isFavourite(item) ? "Remove" : "Add"} ${item.word} ${isFavourite(item) ? "from" : "to"} favourites`);
+                favouriteBtn.setAttribute("aria-pressed", String(isFavourite(item)));
+                favouriteBtn.textContent = isFavourite(item) ? "♥" : "♡";
+                favouriteBtn.addEventListener("click", (event) => {
+                    event.stopPropagation();
+                    toggleFavourite(item);
+                    renderDictionary();
+                });
+                cardHeader.append(word, favouriteBtn);
+                const category = document.createElement("span");
+                category.className = "dict-entry-category";
+                category.textContent = item.category;
+                const definition = document.createElement("p");
+                definition.className = "dict-entry-def";
+                definition.textContent = item.def;
+                card.append(cardHeader, category, definition);
                 card.addEventListener("click", () => {
-                    const idx = definitionsOfTheDay.indexOf(item);
-                    showEntry(item, idx + 1);
+                    showEntry(item);
                     window.scrollTo({ top: 0, behavior: "smooth" });
                 });
                 fragment.appendChild(card);
             });
             dictGrid.appendChild(fragment);
+            if (dictPageStatus) {
+                dictPageStatus.textContent = `Showing ${shownEntries.length.toLocaleString()} of ${filtered.length.toLocaleString()} matching entries`;
+            }
+            if (showMoreBtn) {
+                showMoreBtn.hidden = visibleCount >= filtered.length;
+                showMoreBtn.textContent = `show more (${Math.min(showMoreCount, filtered.length - visibleCount)})`;
+            }
         }
 
         renderDictionary();
 
         dictSearchInput?.addEventListener("input", (e) => {
             searchQuery = e.target.value;
+            visibleCount = showMoreCount;
+            autoLoadArmed = true;
             renderDictionary();
         });
 
@@ -1271,9 +1820,59 @@ function initDefinitionOfTheDay() {
                 alphaButtons.forEach((b) => b.classList.remove("active"));
                 btn.classList.add("active");
                 activeLetter = btn.dataset.letter || "ALL";
+                visibleCount = showMoreCount;
+                autoLoadArmed = true;
                 renderDictionary();
             });
         });
+
+        categoryButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                categoryButtons.forEach((categoryButton) => {
+                    categoryButton.classList.remove("active");
+                    categoryButton.setAttribute("aria-pressed", "false");
+                });
+                button.classList.add("active");
+                button.setAttribute("aria-pressed", "true");
+                activeCategory = button.dataset.category || "ALL";
+                visibleCount = showMoreCount;
+                autoLoadArmed = true;
+                renderDictionary();
+            });
+        });
+
+        favouritesToggle?.addEventListener("click", () => {
+            favouritesOnly = !favouritesOnly;
+            favouritesToggle.setAttribute("aria-pressed", String(favouritesOnly));
+            favouritesToggle.textContent = favouritesOnly ? "♥ showing favourites" : "♡ show favourites";
+            visibleCount = showMoreCount;
+            autoLoadArmed = true;
+            renderDictionary();
+        });
+
+        showMoreBtn?.addEventListener("click", () => {
+            autoLoadArmed = true;
+            loadMoreEntries();
+        });
+
+        if (showMoreBtn && "IntersectionObserver" in window) {
+            loadObserver = new IntersectionObserver(([entry]) => {
+                if (!entry.isIntersecting) {
+                    autoLoadArmed = true;
+                    return;
+                }
+                if (autoLoadArmed && isSupportedAutoLoadConnection() && !showMoreBtn.hidden) {
+                    autoLoadArmed = false;
+                    loadMoreEntries();
+                }
+            }, { rootMargin: "200px 0px" });
+            loadObserver.observe(showMoreBtn);
+        }
+
+        updateAutoLoadStatus();
+        window.addEventListener("online", updateAutoLoadStatus);
+        window.addEventListener("offline", updateAutoLoadStatus);
+        networkConnection?.addEventListener?.("change", updateAutoLoadStatus);
     }
 }
 

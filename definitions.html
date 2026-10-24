@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>dixkonary - Hielke AI</title>
+    <title>Dictionary - Hielke AI</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/webp" href="favicon.webp">
+    <script src="dictionary-extra.js" defer></script>
     <script src="site.js" defer></script>
 </head>
 <body>
@@ -17,7 +18,7 @@
             </a>
             <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle colour theme" aria-pressed="false">☾ dark mode</button>
         </div>
-        <h1>dixkonary</h1>
+        <h1>dictionary</h1>
     </header>
 
     <nav>
@@ -28,25 +29,25 @@
         <a href="projects.html">projects</a>
         <a href="sparx.html">sparx</a>
         <a href="excuses.html">excuses</a>
-        <a href="definitions.html">dixkonary</a>
+        <a href="definitions.html">dictionary</a>
         <a href="payment.html">payment</a>
         <a href="https://discord.gg/SYGz4ZTkTZ">discord</a>
     </nav>
 
     <main>
         <section class="home-hero" aria-labelledby="definitions-heading">
-            <p class="eyebrow"><span id="dict-total-count">380+</span> words · zero GCSEs · heavily loaded with AI roasts</p>
-            <h2 id="definitions-heading">The Unofficial Hielke AI Dixkonary</h2>
-            <p>Every word has a boring official dictionary definition. The Dixkonary replaces them with the brutal, unvarnished truth about AI, Silicon Valley drama, and everyday life. Cleaned of school homework fluff and packed with pure comedic gold.</p>
+            <p class="eyebrow"><span id="dict-total-count">10,000</span> words · AI, school chaos, and big science energy</p>
+            <h2 id="definitions-heading">The Hielke AI Dictionary</h2>
+            <p>AI, English, maths, science, school survival, and Vocaloid: all explained with useful facts and a healthy dose of silliness. Search a topic, pick a letter, and find your new favourite definition.</p>
         </section>
 
-        <section class="definition-panel panel" aria-labelledby="dotd-heading">
+        <section class="definition-panel panel" aria-labelledby="random-definition-heading">
             <div class="dotd-header">
                 <div>
-                    <p class="eyebrow" id="dotd-date-label">today's definition</p>
-                    <h2 id="dotd-heading">Definition of the Day</h2>
+                    <p class="eyebrow">picked from the whole dictionary</p>
+                    <h2 id="random-definition-heading">Random Definition</h2>
                 </div>
-                <span class="dotd-day-badge" id="dotd-day-badge">Entry #1</span>
+                <span class="dotd-day-badge" id="dotd-day-badge">Surprise me!</span>
             </div>
 
             <div class="dotd-card" aria-live="polite">
@@ -55,20 +56,39 @@
             </div>
 
             <div class="dotd-controls">
-                <button id="dotd-random-btn" class="payment-button" type="button">🎲 random definition</button>
-                <button id="dotd-today-btn" class="secondary-button" type="button">📅 today's definition</button>
+                <button id="dotd-random-btn" class="payment-button" type="button">🎲 another random definition</button>
+                <button id="dotd-favourite-btn" class="secondary-button" type="button" aria-pressed="false">♡ add to favourites</button>
                 <button id="dotd-copy-btn" class="secondary-button" type="button">📋 copy definition</button>
                 <span id="dotd-copy-feedback" class="copy-feedback" role="status" aria-live="polite" hidden>Copied!</span>
             </div>
         </section>
 
         <section class="dictionary-browser panel" aria-labelledby="dict-browse-heading">
-            <h2 id="dict-browse-heading">Browse the Dixkonary</h2>
-            <p class="stat-caption">Search or filter through all entries alphabetically:</p>
+            <h2 id="dict-browse-heading">Browse the Dictionary</h2>
+            <p class="stat-caption">Search, filter, or browse the entries. The extra vocabulary notes are playful, not formal dictionary definitions:</p>
 
             <div class="dictionary-search-box">
-                <input type="search" id="dict-search" class="dictionary-search-input" placeholder="Search words or definitions (e.g. Claude, Mistral, GPU, toaster)..." aria-label="Search Dixkonary">
+                <input type="search" id="dict-search" class="dictionary-search-input" placeholder="Search words or definitions (e.g. Claude, photosynthesis, Sparx Maths, Miku)..." aria-label="Search dictionary">
             </div>
+
+            <div id="dict-category-filters" class="dict-category-filters" role="group" aria-label="Filter by category">
+                <button type="button" class="dict-category-btn active" data-category="ALL" aria-pressed="true">all topics</button>
+                <button type="button" class="dict-category-btn" data-category="AI" aria-pressed="false">🤖 AI</button>
+                <button type="button" class="dict-category-btn" data-category="Science" aria-pressed="false">🔬 science</button>
+                <button type="button" class="dict-category-btn" data-category="Maths" aria-pressed="false">➗ maths</button>
+                <button type="button" class="dict-category-btn" data-category="English" aria-pressed="false">📚 English</button>
+                <button type="button" class="dict-category-btn" data-category="School" aria-pressed="false">🎒 school</button>
+                <button type="button" class="dict-category-btn" data-category="Vocaloid & Music" aria-pressed="false">🎵 Vocaloid & music</button>
+                <button type="button" class="dict-category-btn" data-category="Everyday" aria-pressed="false">✨ everyday</button>
+                <button type="button" class="dict-category-btn" data-category="History" aria-pressed="false">🏺 history</button>
+                <button type="button" class="dict-category-btn" data-category="Geography" aria-pressed="false">🌍 geography</button>
+                <button type="button" class="dict-category-btn" data-category="Technology" aria-pressed="false">💻 technology</button>
+            </div>
+            <div class="dictionary-search-box dict-favourites-filter">
+                <button id="dict-favourites-toggle" class="secondary-button" type="button" aria-pressed="false">♡ show favourites</button>
+                <span id="dict-page-status" role="status" aria-live="polite"></span>
+            </div>
+            <p id="dict-auto-status" class="dict-auto-status" role="status" aria-live="polite"></p>
 
             <div class="alphabet-bar" role="group" aria-label="Filter by letter">
                 <button type="button" class="alpha-btn active" data-letter="ALL">ALL</button>
@@ -95,6 +115,7 @@
                 <button type="button" class="alpha-btn" data-letter="U">U</button>
                 <button type="button" class="alpha-btn" data-letter="V">V</button>
                 <button type="button" class="alpha-btn" data-letter="W">W</button>
+                <button type="button" class="alpha-btn" data-letter="X">X</button>
                 <button type="button" class="alpha-btn" data-letter="Y">Y</button>
                 <button type="button" class="alpha-btn" data-letter="Z">Z</button>
             </div>
@@ -102,20 +123,23 @@
             <div id="dict-grid" class="dict-entries-grid" aria-live="polite">
                 <!-- Loaded dynamically by site.js -->
             </div>
+            <div class="dict-show-more">
+                <button id="dict-show-more" class="payment-button" type="button">show more</button>
+            </div>
         </section>
 
-        <section class="home-notes" aria-label="Dixkonary highlights">
+        <section class="home-notes" aria-label="Dictionary highlights">
             <article class="home-note">
                 <h3>🤖 Pure AI Roasts</h3>
                 <p>Featuring definitive guides to Anthropic's anxiety, Claude's constitutional apologies, Mistral's espresso-fueled speed, and NVIDIA's microchip empire.</p>
             </article>
             <article class="home-note">
-                <h3>🚫 100% GCSE-Free</h3>
-                <p>We purged every trace of detention, Sparx bookwork codes, and quadratic formulas. Only relevant tech, AI, and lifestyle truths remain.</p>
+                <h3>📚 School Survival Kit</h3>
+                <p>From Year 7 and wet breaks to Sparx Maths, bookwork codes, and the mysterious missing planner.</p>
             </article>
             <article class="home-note">
-                <h3>⚡ Interactive Dixkonary</h3>
-                <p>Search any word or filter by letter to browse all entries. Click on any card in the dictionary to highlight it in the main viewer above!</p>
+                <h3>⚡ Interactive Dictionary</h3>
+                <p>Filter by topic or letter, save favourites, and show more entries as you browse. Click a word card to open it in the random-definition panel.</p>
             </article>
         </section>
     </main>
@@ -129,7 +153,7 @@
             <a href="projects.html">projects</a>
             <a href="sparx.html">sparx</a>
             <a href="excuses.html">excuses</a>
-            <a href="definitions.html">dixkonary</a>
+            <a href="definitions.html">dictionary</a>
             <a href="payment.html">payment</a>
             <a href="dashboard.html">dashboard</a>
             <a href="https://discord.gg/SYGz4ZTkTZ">discord</a>

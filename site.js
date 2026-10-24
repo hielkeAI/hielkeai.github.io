@@ -1208,6 +1208,9 @@ const definitionsOfTheDay = [
     { word: "locker", def: "A small metal cupboard that holds your books, provided you remember the combination and the key has not vanished." },
     { word: "forgotten planner", def: "A planner left at home on the day it contains the one piece of information everyone needs." },
     { word: "school bell", def: "A sound that moves an entire building of people at once, like a very loud and underfunded orchestra conductor." },
+    { word: "school lanyard", def: "A strap that helps keep an ID badge visible at school; take it off before posting photos that show your name, school, or access details." },
+    { word: "safeguarding", def: "The steps adults and organisations take to protect children and young people. If something worries you, tell a trusted adult or your school's safeguarding lead." },
+    { word: "Smoothwall", def: "A web-filtering and monitoring system used by some schools. Filters follow each school's settings, so if a learning site is blocked, ask a teacher or IT staff rather than trying to get around it." },
     { word: "Vocaloid", def: "A singing voice-synthesis software and music culture where producers turn virtual voices into songs, concerts, and extremely catchy earworms." },
     { word: "Hatsune Miku", def: "A turquoise-haired virtual singer and Vocaloid icon whose fictional schedule is somehow busier than yours." },
     { word: "Kagamine Rin and Len", def: "Twin virtual singers from the Vocaloid world, frequently featured together and apparently immune to the school-run timetable." },
@@ -1312,7 +1315,8 @@ function initDefinitionOfTheDay() {
         ["Maths", /\b(math|mathemat|number|algebra|fraction|equation|geometry|triangle|axis|graph|ratio|probability|percentage|prime|factor|multiple|mean|median|mode|range|volume|area|angle|sparx|calculator|theorem|arithmetic)\b/i],
         ["Science", /\b(science|biology|chemistry|physics|photosynthesis|mitosis|osmosis|cell|atom|energy|force|gravity|plant|animal|organism|ecosystem|climate|chemical|element|electric|molecule|evolution|density|fossil|immune|isotope|tectonic|renewable|biodiversity|circuit)\b/i],
         ["English", /\b(english|grammar|poem|poetry|literature|metaphor|simile|alliteration|personification|onomatopoeia|hyperbole|apostrophe|semicolon|punctuation|spelling|rhyme|narrator|connotation|denotation|clause|verb|adjective|noun|writing|sentence|word)\b/i],
-        ["School", /\b(school|teacher|student|class|classroom|homework|exam|revision|lesson|year 7|year seven|uniform|planner|detention|pupil|timetable|lunch|locker|school trip|residential|wet break|form tutor|bookwork|worksheet|textbook|supply teacher|register|pe kit)\b/i]
+        ["Technology", /\b(smoothwall|web filtering|content filtering|firewall|network|ethernet|wi-fi|software|browser|database|computer|device|cybersecurity)\b/i],
+        ["School", /\b(school|teacher|student|class|classroom|homework|exam|revision|lesson|year 7|year seven|uniform|planner|detention|pupil|timetable|lunch|locker|school trip|residential|wet break|form tutor|bookwork|worksheet|textbook|supply teacher|register|pe kit|lanyard|safeguarding)\b/i]
     ];
 
     function getCategory(entry) {

@@ -38,8 +38,8 @@
                 <button type="submit">sign in</button>
             </form>
             <p><a href="#reset-password" id="reset-password-link">forgot password?</a></p>
-            <details>
-                <summary>create a username and email account</summary>
+            <section class="panel account-create-panel">
+                <h3>create a username and email account</h3>
                 <form id="register-form">
                     <label for="register-username">Username</label>
                     <input id="register-username" pattern="[A-Za-z0-9_.-]{3,32}" required>
@@ -49,7 +49,7 @@
                     <input id="register-password" type="password" minlength="8" autocomplete="new-password" required>
                     <button type="submit">create account and verify email</button>
                 </form>
-            </details>
+            </section>
             <details>
                 <summary>reset password</summary>
                 <form id="reset-form">

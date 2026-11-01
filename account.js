@@ -4,6 +4,27 @@ let currentAccount = null;
 const loginPanel = document.querySelector('#login-panel');
 const accountPanel = document.querySelector('#account-panel');
 
+async function resumeSession() {
+    const params = new URLSearchParams(window.location.search);
+    const error = params.get('error');
+    if (error === 'discord_signin_failed') {
+        showMessage(document.querySelector('#login-message'), 'Discord sign-in failed. Check the OAuth redirect URL and Discord client credentials.');
+    } else if (params.get('signin') === 'discord') {
+        try {
+            const result = await request('/api/auth/session');
+            csrfToken = result.csrfToken;
+            renderAccounts(result.account);
+            showAccountView();
+            window.history.replaceState({}, '', '/account.html');
+            return;
+        } catch (error) {
+            showMessage(document.querySelector('#login-message'), error.message);
+        }
+    }
+}
+
+resumeSession();
+
 async function request(url, options = {}) {
     const response = await fetch(url, {
         ...options,

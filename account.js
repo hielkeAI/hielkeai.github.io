@@ -1,5 +1,7 @@
 let csrfToken = '';
 let currentAccount = null;
+let selectedPlatform = 'sparx_maths';
+let selectedLoginType = 'normal';
 
 const loginPanel = document.querySelector('#login-panel');
 const accountPanel = document.querySelector('#account-panel');
@@ -129,25 +131,51 @@ document.querySelector('#register-form').addEventListener('submit', async event 
     }
 });
 
+document.querySelectorAll('[data-platform]').forEach(button => {
+    button.addEventListener('click', () => {
+        document.querySelectorAll('[data-platform]').forEach(item => item.classList.remove('active'));
+        button.classList.add('active');
+        selectedPlatform = button.dataset.platform;
+    });
+});
+
+document.querySelectorAll('[data-login-type]').forEach(button => {
+    button.addEventListener('click', () => {
+        document.querySelectorAll('[data-login-type]').forEach(item => item.classList.remove('active'));
+        button.classList.add('active');
+        selectedLoginType = button.dataset.loginType;
+    });
+});
+
+document.querySelectorAll('[data-login-method]').forEach(button => {
+    button.addEventListener('click', () => {
+        document.querySelectorAll('[data-login-method]').forEach(item => item.classList.remove('active'));
+        button.classList.add('active');
+        const cookieMode = button.dataset.loginMethod === 'cookie';
+        document.querySelector('.username-fields').hidden = cookieMode;
+        document.querySelector('.cookie-fields').hidden = !cookieMode;
+    });
+});
+
 document.querySelector('#direct-login-form').addEventListener('submit', async event => {
     event.preventDefault();
     const message = document.querySelector('#direct-login-message');
-    const platform = document.querySelector('#direct-platform').value;
-    const cookie = document.querySelector('#direct-cookie').value.trim();
-    const username = document.querySelector('#direct-username').value.trim();
-    const password = document.querySelector('#direct-password').value;
+    const cookie = document.querySelector('#platform-cookie').value.trim();
+    const username = document.querySelector('#platform-username').value.trim();
+    const password = document.querySelector('#platform-password').value;
     try {
         const result = await request('/api/platform/login', {
             method: 'POST',
             body: JSON.stringify({
-                platform,
+                platform: selectedPlatform,
                 cookie,
                 username,
                 password,
-                school: document.querySelector('#direct-school').value.trim(),
-                type: document.querySelector('#direct-login-type').value
+                school: document.querySelector('#platform-school').value.trim(),
+                type: selectedLoginType
             })
         });
+        csrfToken = result.csrfToken || csrfToken;
         const homeworkCount = Array.isArray(result.homeworks) ? result.homeworks.length : 0;
         showMessage(message, `Connected to ${result.app}. Platform ID ${result.accountId || 'unavailable'}; ${homeworkCount} homework items found.`, false);
     } catch (error) {

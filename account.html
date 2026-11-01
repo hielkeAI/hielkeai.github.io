@@ -9,7 +9,7 @@
     <script src="site.js" defer></script>
     <script src="account.js" defer></script>
 </head>
-<body>
+<body class="platform-page">
     <header>
         <div class="site-bar">
             <a class="site-brand" href="index.html"><span>hielke ai</span></a>
@@ -24,6 +24,59 @@
         <a href="https://discord.gg/SYGz4ZTkTZ">discord</a>
     </nav>
     <main class="dashboard">
+        <section id="platform-login-panel" class="panel platform-login-panel">
+            <div class="platform-login-heading">
+                <span class="platform-kicker">RelayAI homework</span>
+                <p>No Discord needed. Sign in to Sparx, pick a task, and RelayAI does it.</p>
+            </div>
+            <p class="session-note">Your password is used for this sign-in session only. It is never saved to your RelayAI account and is cleared when the sign-in finishes.</p>
+
+            <div class="platform-login-tabs" role="tablist" aria-label="Login method">
+                <button class="segment active" type="button" data-login-method="username">Username &amp; password</button>
+                <button class="segment" type="button" data-login-method="cookie">Cookie login</button>
+            </div>
+
+            <form id="direct-login-form">
+                <fieldset class="choice-field">
+                    <legend>Subject</legend>
+                    <div class="choice-grid subject-grid">
+                        <button class="choice active" type="button" data-platform="sparx_maths">Sparx Maths</button>
+                        <button class="choice" type="button" data-platform="sparx_science">Sparx Science</button>
+                        <button class="choice" type="button" data-platform="sparx_reader">Sparx Reader</button>
+                        <button class="choice" type="button" data-platform="seneca">Seneca</button>
+                        <button class="choice" type="button" data-platform="educake">Educake</button>
+                    </div>
+                </fieldset>
+
+                <div class="form-stack">
+                    <label for="platform-school">School</label>
+                    <input id="platform-school" placeholder="Your school's name" autocomplete="organization">
+
+                    <fieldset class="choice-field">
+                        <legend>How do you sign in to Sparx?</legend>
+                        <div class="choice-grid login-type-grid">
+                            <button class="choice active" type="button" data-login-type="normal">Sparx password</button>
+                            <button class="choice" type="button" data-login-type="Microsoft">Microsoft</button>
+                            <button class="choice" type="button" data-login-type="Google">Google</button>
+                        </div>
+                    </fieldset>
+
+                    <div class="credentials username-fields">
+                        <label for="platform-username">Sparx username</label>
+                        <input id="platform-username" autocomplete="username" placeholder="The username Sparx gave you">
+                        <label for="platform-password">Password</label>
+                        <input id="platform-password" type="password" autocomplete="current-password">
+                    </div>
+                    <div class="credentials cookie-fields" hidden>
+                        <label for="platform-cookie">Platform cookies</label>
+                        <textarea id="platform-cookie" rows="5" placeholder="Paste your platform cookie"></textarea>
+                    </div>
+                </div>
+                <button class="connect-button" type="submit">Connect to platform</button>
+                <p id="direct-login-message" class="form-message" role="alert" hidden></p>
+            </form>
+        </section>
+
         <section id="login-panel" class="panel">
             <h2>sign in</h2>
             <div class="hero-actions">
@@ -112,38 +165,6 @@
                 </form>
             </section>
 
-            <section class="panel">
-                <h2>log in to a platform now</h2>
-                <p>Credentials are used for this browser session only and are not returned to the page.</p>
-                <form id="direct-login-form">
-                    <label for="direct-platform">Platform</label>
-                    <select id="direct-platform" required>
-                        <option value="sparx_maths">Sparx Maths</option>
-                        <option value="sparx_reader">Sparx Reader</option>
-                        <option value="sparx_science">Sparx Science</option>
-                        <option value="drfrost">Dr Frost</option>
-                        <option value="educake">Educake</option>
-                        <option value="seneca">Seneca</option>
-                        <option value="purplemash">Purple Mash</option>
-                    </select>
-                    <label for="direct-username">Username / email</label>
-                    <input id="direct-username" autocomplete="username">
-                    <label for="direct-password">Password</label>
-                    <input id="direct-password" type="password" autocomplete="current-password">
-                    <label for="direct-school">School (Sparx only)</label>
-                    <input id="direct-school">
-                    <label for="direct-login-type">Sparx login type</label>
-                    <select id="direct-login-type">
-                        <option value="normal">normal</option>
-                        <option value="Microsoft">Microsoft</option>
-                        <option value="Google">Google</option>
-                    </select>
-                    <label for="direct-cookie">Cookie login (optional)</label>
-                    <textarea id="direct-cookie" rows="3" placeholder="Paste platform cookies here"></textarea>
-                    <button type="submit">connect platform</button>
-                    <p id="direct-login-message" class="form-message" role="alert" hidden></p>
-                </form>
-            </section>
 
             <section class="panel">
                 <h2>saved accounts</h2>

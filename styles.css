@@ -1105,3 +1105,36 @@ footer .footer-links a {
     color: var(--muted);
     line-height: 1.5;
 }
+
+.account-list {
+    display: grid;
+    gap: 10px;
+}
+
+.account-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.account-row strong {
+    text-transform: capitalize;
+}
+
+.dashboard input[type="checkbox"] {
+    width: auto;
+    accent-color: var(--accent);
+}
+
+.dashboard textarea,
+.dashboard select {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: var(--surface-alt);
+    color: var(--ink);
+    font: inherit;
+    padding: 10px;
+}

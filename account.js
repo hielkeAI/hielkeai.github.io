@@ -1,0 +1,150 @@
+let csrfToken = '';
+let currentAccount = null;
+
+const loginPanel = document.querySelector('#login-panel');
+const accountPanel = document.querySelector('#account-panel');
+
+async function request(url, options = {}) {
+    const response = await fetch(url, {
+        ...options,
+        headers: {
+            'content-type': 'application/json',
+            ...(csrfToken ? { 'x-csrf-token': csrfToken } : {}),
+            ...(options.headers || {})
+        }
+    });
+    const data = await response.json();
+    if (!response.ok) throw new Error(data.error || 'Request failed.');
+    return data;
+}
+
+function showMessage(element, message, error = true) {
+    element.textContent = message;
+    element.hidden = false;
+    element.classList.toggle('error', error);
+}
+
+function renderAccounts(account) {
+    currentAccount = account;
+    document.querySelector('#account-summary').textContent =
+        `Discord ID ${account.discordId} · License ${account.license || 'none'} · ${account.slots} account slots`;
+
+    const saved = document.querySelector('#saved-accounts');
+    if (!account.savedAccounts.length) {
+        saved.innerHTML = '<p>No saved accounts yet.</p>';
+    } else {
+        saved.innerHTML = account.savedAccounts.map(item => `
+            <article class="stat-card account-row">
+                <div><strong>${escapeHtml(item.app.replace('_', ' '))}</strong><br>${escapeHtml(item.username)}</div>
+                <button type="button" class="secondary-button delete-account" data-id="${item.id}">delete</button>
+            </article>
+        `).join('');
+    }
+
+    document.querySelector('#main-accounts').innerHTML = account.mainAccounts.length
+        ? account.mainAccounts.map(platform => `
+            <article class="stat-card account-row">
+                <strong>${escapeHtml(platform.replace('_', ' '))}</strong>
+                <button type="button" class="secondary-button remove-main" data-platform="${escapeHtml(platform)}">remove</button>
+            </article>
+        `).join('')
+        : '<p>No main accounts configured.</p>';
+}
+
+function escapeHtml(value) {
+    const element = document.createElement('span');
+    element.textContent = value;
+    return element.innerHTML;
+}
+
+function showAccountView() {
+    loginPanel.hidden = true;
+    accountPanel.hidden = false;
+}
+
+document.querySelector('#account-login-form').addEventListener('submit', async event => {
+    event.preventDefault();
+    const message = document.querySelector('#login-message');
+    try {
+        const result = await request('/api/login', {
+            method: 'POST',
+            body: JSON.stringify({
+                discordId: document.querySelector('#discord-id').value.trim(),
+                masterPassword: document.querySelector('#master-password').value
+            })
+        });
+        csrfToken = result.csrfToken;
+        renderAccounts(result.account);
+        showAccountView();
+    } catch (error) {
+        showMessage(message, error.message);
+    }
+});
+
+document.querySelector('#cookie-login').addEventListener('change', event => {
+    document.querySelector('#credential-fields').hidden = event.target.checked;
+    document.querySelector('#cookie-field').hidden = !event.target.checked;
+});
+
+document.querySelector('#saved-account-form').addEventListener('submit', async event => {
+    event.preventDefault();
+    const message = document.querySelector('#save-message');
+    const cookieLogin = document.querySelector('#cookie-login').checked;
+    try {
+        const result = await request('/api/saved-accounts', {
+            method: 'POST',
+            body: JSON.stringify({
+                app: document.querySelector('#platform').value,
+                cookie: cookieLogin ? document.querySelector('#cookie').value.trim() : '',
+                username: document.querySelector('#username').value.trim(),
+                password: document.querySelector('#password').value,
+                school: document.querySelector('#school').value.trim()
+            })
+        });
+        currentAccount.savedAccounts = result.savedAccounts;
+        renderAccounts(currentAccount);
+        event.target.reset();
+        document.querySelector('#credential-fields').hidden = false;
+        document.querySelector('#cookie-field').hidden = true;
+        showMessage(message, 'Account saved.', false);
+    } catch (error) {
+        showMessage(message, error.message);
+    }
+});
+
+document.querySelector('#saved-accounts').addEventListener('click', async event => {
+    const button = event.target.closest('.delete-account');
+    if (!button) return;
+    try {
+        const result = await request('/api/saved-accounts', {
+            method: 'DELETE',
+            body: JSON.stringify({ id: Number(button.dataset.id) })
+        });
+        currentAccount.savedAccounts = result.savedAccounts;
+        renderAccounts(currentAccount);
+    } catch (error) {
+        alert(error.message);
+    }
+});
+
+document.querySelector('#main-accounts').addEventListener('click', async event => {
+    const button = event.target.closest('.remove-main');
+    if (!button) return;
+    try {
+        await request('/api/main-accounts', {
+            method: 'DELETE',
+            body: JSON.stringify({ platform: button.dataset.platform })
+        });
+        currentAccount.mainAccounts = currentAccount.mainAccounts.filter(item => item !== button.dataset.platform);
+        renderAccounts(currentAccount);
+    } catch (error) {
+        alert(error.message);
+    }
+});
+
+document.querySelector('#logout-button').addEventListener('click', async () => {
+    await request('/api/logout', { method: 'POST', body: '{}' });
+    csrfToken = '';
+    accountPanel.hidden = true;
+    loginPanel.hidden = false;
+});

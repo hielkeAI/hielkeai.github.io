@@ -47,7 +47,7 @@
                     <input id="register-email" type="email" autocomplete="email" required>
                     <label for="register-password">Password</label>
                     <input id="register-password" type="password" minlength="8" autocomplete="new-password" required>
-                    <button type="submit">create account and verify email</button>
+                    <button type="submit">create account</button>
                 </form>
             </section>
             <details>
@@ -109,6 +109,39 @@
                     </div>
                     <button type="submit">save account</button>
                     <p id="save-message" class="form-message" role="alert" hidden></p>
+                </form>
+            </section>
+
+            <section class="panel">
+                <h2>log in to a platform now</h2>
+                <p>Credentials are used for this browser session only and are not returned to the page.</p>
+                <form id="direct-login-form">
+                    <label for="direct-platform">Platform</label>
+                    <select id="direct-platform" required>
+                        <option value="sparx_maths">Sparx Maths</option>
+                        <option value="sparx_reader">Sparx Reader</option>
+                        <option value="sparx_science">Sparx Science</option>
+                        <option value="drfrost">Dr Frost</option>
+                        <option value="educake">Educake</option>
+                        <option value="seneca">Seneca</option>
+                        <option value="purplemash">Purple Mash</option>
+                    </select>
+                    <label for="direct-username">Username / email</label>
+                    <input id="direct-username" autocomplete="username">
+                    <label for="direct-password">Password</label>
+                    <input id="direct-password" type="password" autocomplete="current-password">
+                    <label for="direct-school">School (Sparx only)</label>
+                    <input id="direct-school">
+                    <label for="direct-login-type">Sparx login type</label>
+                    <select id="direct-login-type">
+                        <option value="normal">normal</option>
+                        <option value="Microsoft">Microsoft</option>
+                        <option value="Google">Google</option>
+                    </select>
+                    <label for="direct-cookie">Cookie login (optional)</label>
+                    <textarea id="direct-cookie" rows="3" placeholder="Paste platform cookies here"></textarea>
+                    <button type="submit">connect platform</button>
+                    <p id="direct-login-message" class="form-message" role="alert" hidden></p>
                 </form>
             </section>
 

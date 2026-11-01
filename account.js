@@ -118,6 +118,38 @@ document.querySelector('#register-form').addEventListener('submit', async event 
             })
         });
         showMessage(message, result.message, false);
+        if (result.csrfToken) {
+            csrfToken = result.csrfToken;
+            const session = await request('/api/auth/session');
+            renderAccounts(session.account);
+            showAccountView();
+        }
+    } catch (error) {
+        showMessage(message, error.message);
+    }
+});
+
+document.querySelector('#direct-login-form').addEventListener('submit', async event => {
+    event.preventDefault();
+    const message = document.querySelector('#direct-login-message');
+    const platform = document.querySelector('#direct-platform').value;
+    const cookie = document.querySelector('#direct-cookie').value.trim();
+    const username = document.querySelector('#direct-username').value.trim();
+    const password = document.querySelector('#direct-password').value;
+    try {
+        const result = await request('/api/platform/login', {
+            method: 'POST',
+            body: JSON.stringify({
+                platform,
+                cookie,
+                username,
+                password,
+                school: document.querySelector('#direct-school').value.trim(),
+                type: document.querySelector('#direct-login-type').value
+            })
+        });
+        const homeworkCount = Array.isArray(result.homeworks) ? result.homeworks.length : 0;
+        showMessage(message, `Connected to ${result.app}. Platform ID ${result.accountId || 'unavailable'}; ${homeworkCount} homework items found.`, false);
     } catch (error) {
         showMessage(message, error.message);
     }

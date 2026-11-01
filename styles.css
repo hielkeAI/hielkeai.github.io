@@ -1138,3 +1138,75 @@ footer .footer-links a {
     font: inherit;
     padding: 10px;
 }
+
+/* Account workspace */
+.dashboard {
+    width: min(1120px, calc(100% - 32px));
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    padding-bottom: 64px;
+}
+
+.dashboard > .panel,
+.dashboard > section {
+    border-radius: 20px;
+}
+
+.dashboard .panel {
+    background: color-mix(in srgb, var(--surface) 94%, transparent);
+    border: 1px solid color-mix(in srgb, var(--line) 82%, transparent);
+    box-shadow: 0 18px 60px rgba(0, 0, 0, .18);
+}
+
+.dashboard input,
+.dashboard textarea,
+.dashboard select {
+    min-height: 44px;
+    border-radius: 10px;
+}
+
+.dashboard button,
+.dashboard .hero-actions a {
+    border-radius: 10px;
+    min-height: 44px;
+}
+
+.dashboard form button[type="submit"] {
+    margin-top: 6px;
+    font-weight: 750;
+}
+
+.account-create-panel {
+    margin-top: 20px;
+}
+
+.dashboard #login-panel {
+    grid-column: 1 / -1;
+    width: min(760px, 100%);
+    margin-inline: auto;
+}
+
+.dashboard #account-panel {
+    grid-column: 1 / -1;
+}
+
+.dashboard #account-panel > .panel {
+    margin-bottom: 20px;
+}
+
+.dashboard-heading {
+    border-radius: 18px;
+}
+
+@media (max-width: 760px) {
+    .dashboard {
+        grid-template-columns: 1fr;
+        width: min(100% - 20px, 1120px);
+    }
+    .dashboard input,
+    .dashboard textarea,
+    .dashboard select {
+        font-size: 16px;
+    }
+}

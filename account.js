@@ -36,7 +36,10 @@ function renderAccounts(account) {
         saved.innerHTML = account.savedAccounts.map(item => `
             <article class="stat-card account-row">
                 <div><strong>${escapeHtml(item.app.replace('_', ' '))}</strong><br>${escapeHtml(item.username)}</div>
-                <button type="button" class="secondary-button delete-account" data-id="${item.id}">delete</button>
+                <div class="account-actions">
+                    <button type="button" class="secondary-button run-account" data-id="${item.id}" data-app="${escapeHtml(item.app)}">open</button>
+                    <button type="button" class="secondary-button delete-account" data-id="${item.id}">delete</button>
+                </div>
             </article>
         `).join('');
     }
@@ -61,6 +64,57 @@ function showAccountView() {
     loginPanel.hidden = true;
     accountPanel.hidden = false;
 }
+
+document.querySelector('#auth-login-form').addEventListener('submit', async event => {
+    event.preventDefault();
+    const message = document.querySelector('#login-message');
+    try {
+        const result = await request('/api/auth/login', {
+            method: 'POST',
+            body: JSON.stringify({
+                usernameOrEmail: document.querySelector('#auth-login').value.trim(),
+                password: document.querySelector('#auth-password').value
+            })
+        });
+        csrfToken = result.csrfToken;
+        renderAccounts(result.account);
+        showAccountView();
+    } catch (error) {
+        showMessage(message, error.message);
+    }
+});
+
+document.querySelector('#register-form').addEventListener('submit', async event => {
+    event.preventDefault();
+    const message = document.querySelector('#login-message');
+    try {
+        const result = await request('/api/auth/register', {
+            method: 'POST',
+            body: JSON.stringify({
+                username: document.querySelector('#register-username').value.trim(),
+                email: document.querySelector('#register-email').value.trim(),
+                password: document.querySelector('#register-password').value
+            })
+        });
+        showMessage(message, result.message, false);
+    } catch (error) {
+        showMessage(message, error.message);
+    }
+});
+
+document.querySelector('#reset-form').addEventListener('submit', async event => {
+    event.preventDefault();
+    const message = document.querySelector('#login-message');
+    try {
+        const result = await request('/api/auth/reset-request', {
+            method: 'POST',
+            body: JSON.stringify({ email: document.querySelector('#reset-email').value.trim() })
+        });
+        showMessage(message, result.message, false);
+    } catch (error) {
+        showMessage(message, error.message);
+    }
+});
 
 document.querySelector('#account-login-form').addEventListener('submit', async event => {
     event.preventDefault();
@@ -113,6 +167,20 @@ document.querySelector('#saved-account-form').addEventListener('submit', async e
 });
 
 document.querySelector('#saved-accounts').addEventListener('click', async event => {
+    const runButton = event.target.closest('.run-account');
+    if (runButton) {
+        try {
+            const result = await request('/api/platform/login', {
+                method: 'POST',
+                body: JSON.stringify({ accountId: Number(runButton.dataset.id), platform: runButton.dataset.app })
+            });
+            const homeworkCount = Array.isArray(result.homeworks) ? result.homeworks.length : 0;
+            alert(`Connected to ${result.app}. Platform account ID: ${result.accountId || 'unavailable'}.\n${homeworkCount} homework items available.`);
+        } catch (error) {
+            alert(error.message);
+        }
+        return;
+    }
     const button = event.target.closest('.delete-account');
     if (!button) return;
     try {

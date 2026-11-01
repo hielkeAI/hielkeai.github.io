@@ -25,16 +25,53 @@
     </nav>
     <main class="dashboard">
         <section id="login-panel" class="panel">
-            <h2>sign in with your bot account</h2>
-            <p>Use your numeric Discord user ID and the same master password used by the Hielke AI bot.</p>
-            <form id="account-login-form">
+            <h2>sign in</h2>
+            <div class="hero-actions">
+                <a href="/api/auth/discord" id="discord-signin">sign in with Discord</a>
+            </div>
+            <p>Sign in with your website username or email.</p>
+            <form id="auth-login-form">
+                <label for="auth-login">Username or email</label>
+                <input id="auth-login" autocomplete="username" required>
+                <label for="auth-password">Password</label>
+                <input id="auth-password" type="password" autocomplete="current-password" required>
+                <button type="submit">sign in</button>
+            </form>
+            <p><a href="#reset-password" id="reset-password-link">forgot password?</a></p>
+            <details>
+                <summary>create a username and email account</summary>
+                <form id="register-form">
+                    <label for="register-username">Username</label>
+                    <input id="register-username" pattern="[A-Za-z0-9_.-]{3,32}" required>
+                    <label for="register-email">Email</label>
+                    <input id="register-email" type="email" autocomplete="email" required>
+                    <label for="register-password">Password</label>
+                    <input id="register-password" type="password" minlength="8" autocomplete="new-password" required>
+                    <button type="submit">create account and verify email</button>
+                </form>
+            </details>
+            <details>
+                <summary>reset password</summary>
+                <form id="reset-form">
+                    <label for="reset-email">Email</label>
+                    <input id="reset-email" type="email" autocomplete="email" required>
+                    <button type="submit">send reset email</button>
+                </form>
+            </details>
+            <p id="login-message" class="form-message" role="alert" hidden></p>
+
+            <details>
+                <summary>sync an existing bot account by Discord ID</summary>
+                <p>Use this to link saved bot accounts. Your password stays encrypted and is only held during this browser session.</p>
+                <form id="account-login-form">
                 <label for="discord-id">Discord user ID</label>
                 <input id="discord-id" inputmode="numeric" autocomplete="off" pattern="[0-9]+" required>
                 <label for="master-password">Master password</label>
                 <input id="master-password" type="password" autocomplete="current-password">
                 <button type="submit">sync accounts</button>
                 <p id="login-message" class="form-message" role="alert" hidden></p>
-            </form>
+                </form>
+            </details>
         </section>
 
         <section id="account-panel" hidden>

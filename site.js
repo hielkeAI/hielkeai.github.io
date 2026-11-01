@@ -753,9 +753,6 @@ initExcuseGenerator();
 
 
 // ── The Great Unofficial Dixkonary ───────────────────────────────────────────
-
-
-// ── The Great Unofficial Dixkonary (Definition of the Day) ───────────────────
 const definitionsOfTheDay = [
     { word: "toaster", def: "A small metal friend that makes warm bread and occasionally tries to kill you by being placed near the sink." },
     { word: "artificial intelligence", def: "A collection of matrix multiplications pretending to have consciousness, opinions, and a preference for oat milk." },
@@ -818,10 +815,13 @@ const definitionsOfTheDay = [
     { word: "red teaming", def: "Hiring creative humans to spend all day swearing at an AI to see if they can make it misbehave." },
     { word: "superalignment", def: "The ambitious plan to control an AI vastly smarter than humanity, abandoned when the founders left for other startups." },
     { word: "alarm clock", def: "A device specifically designed to ruin the best part of your night." },
+    { word: "homework", def: "A punishment invented by someone who hated children but needed a socially acceptable reason for it." },
     { word: "Monday", def: "The universe's way of reminding you that joy is temporary." },
     { word: "Wi-Fi", def: "An invisible force that works perfectly when you don't need it and disappears the moment you do." },
     { word: "pencil case", def: "A container that holds seventeen broken pencils, zero working pens, and a ruler you have never used." },
+    { word: "school bag", def: "A portable archive of forgotten homework, crumpled worksheets, and an apple from 2019." },
     { word: "calculator", def: "A machine that does maths correctly but gets all the credit while you get all the blame." },
+    { word: "revision", def: "The art of looking at notes you wrote three months ago and pretending you remember writing them." },
     { word: "deadline", def: "A date placed in the future to give you the illusion that you have time before you do not." },
     { word: "printer", def: "A machine that exists to show you how little ink you have at the worst possible moment." },
     { word: "microwave", def: "A portal that makes food hot on the outside and ice cold in the centre." },
@@ -837,12 +837,20 @@ const definitionsOfTheDay = [
     { word: "Google", def: "An oracle you consult for important life questions and then spend 45 minutes reading about something completely unrelated." },
     { word: "YouTube", def: "A website you visit to watch one video and leave four hours later with opinions about medieval bread baking." },
     { word: "nap", def: "A short sleep that solves every problem except the original problem, which now has company." },
+    { word: "homework excuse", def: "A creative work of fiction that is somehow more effort than the homework itself." },
+    { word: "school uniform", def: "Clothing that exists to make everyone equally uncomfortable rather than individually stylish." },
     { word: "library", def: "A room full of books that people visit primarily to use the Wi-Fi and fall asleep." },
+    { word: "textbook", def: "A thick book that costs a shocking amount of money to contain information freely available online." },
+    { word: "teacher", def: "A professional who explains things clearly to 30 people and is somehow surprised when 29 of them did not listen." },
+    { word: "exam", def: "A timed event designed to make everything you know leave your head simultaneously." },
     { word: "multiple choice", def: "A question format that gives you the answer somewhere in the question but refuses to tell you which one it is." },
     { word: "lunchbreak", def: "A brief window of freedom that exists to remind you that freedom is only 45 minutes long." },
     { word: "group project", def: "An academic exercise in which one person does everything and everyone gets equal marks." },
     { word: "presentation", def: "The act of standing in front of people who know you and reading from a slide that everyone can also see." },
+    { word: "school Wi-Fi", def: "A network that blocks every website except the ones that are broken." },
     { word: "Teams", def: "A Microsoft app that sends your work to the wrong person, crashes during your presentation, and calls your microphone a vegetable." },
+    { word: "Google Classroom", def: "A digital inbox that allows teachers to assign homework at 11:58 PM on a Sunday with the energy of someone who just remembered." },
+    { word: "school printer", def: "A communal machine that runs out of ink exclusively when your document is in the queue." },
     { word: "pencil", def: "A wooden writing stick that snaps immediately after you sharpen it and lasts forever when you have nothing to write." },
     { word: "eraser", def: "A tool that removes pencil marks and simultaneously spreads them across a wider area." },
     { word: "ruler", def: "A measuring device that lives in your pencil case and is used exclusively as a drumstick." },
@@ -851,19 +859,20 @@ const definitionsOfTheDay = [
     { word: "biro", def: "A ballpoint pen that works perfectly when you are testing it on scrap paper and refuses to write on your actual work." },
     { word: "compass", def: "A pointed instrument from your geometry set that has stabbed you at least three times and drawn zero perfect circles." },
     { word: "protractor", def: "A semicircular device that measures angles to a level of precision never required in real life." },
+    { word: "maths", def: "A subject that involves numbers, letters, and the specific noise a student makes when they open a new worksheet." },
     { word: "algebra", def: "The branch of mathematics that asks where x has gone and why you should care." },
-    { word: "photosynthesis", def: "The process by which plants turn sunlight into food, something they have been doing without any external assistance since the Devonian period." },
+    { word: "photosynthesis", def: "The process by which plants turn sunlight into food, something they have been doing without any homework help since the Devonian period." },
     { word: "mitosis", def: "When a cell splits into two identical copies of itself, which sounds efficient until you have to draw and label it." },
-    { word: "osmosis", def: "The movement of water through a membrane, or alternatively, the process by which homework knowledge enters your brain by simply standing near a library." },
-    { word: "the water cycle", def: "A diagram involving arrows, clouds, and the word 'evaporation' that everyone remembers from primary science diagrams." },
-    { word: "atom", def: "A tiny particle that makes up everything, including every device and screen around you right now." },
-    { word: "electron", def: "A very small negative thing orbiting an atom, constantly whizzing around in a cloud of quantum probability." },
+    { word: "osmosis", def: "The movement of water through a membrane, or alternatively, the process by which homework knowledge enters your brain by sleeping on the textbook." },
+    { word: "the water cycle", def: "A diagram involving arrows, clouds, and the word 'evaporation' that you will draw incorrectly on at least one exam." },
+    { word: "atom", def: "A tiny particle that makes up everything, including the atoms in your homework that are currently not being completed." },
+    { word: "electron", def: "A very small negative thing orbiting an atom, much like a student orbiting the idea of starting their homework." },
     { word: "proton", def: "A positively charged particle in the nucleus of an atom, included here because balance is important." },
-    { word: "periodic table", def: "A grid of chemical elements arranged scientifically that neatly organizes the building blocks of the universe into handy coloured boxes." },
+    { word: "periodic table", def: "A grid of chemical elements arranged scientifically that your teacher insists you memorise but will definitely be on the wall during the exam." },
     { word: "gravity", def: "A force that keeps you on the ground and is responsible for every dropped phone screen." },
-    { word: "velocity", def: "Speed with a direction, the rate at which something changes position in a specific direction." },
-    { word: "friction", def: "A force that slows things down, the resistance encountered when two surfaces slide against each other." },
-    { word: "momentum", def: "A physics concept that explains why heavy objects in motion really do not want to stop moving." },
+    { word: "velocity", def: "Speed with a direction, which is what homework avoidance has: going nowhere, fast." },
+    { word: "friction", def: "A force that slows things down, similar to the sensation of opening a homework document." },
+    { word: "momentum", def: "A physics concept that explains why it is harder to stop playing a game than to start doing homework." },
     { word: "Newton", def: "A scientist who watched an apple fall and invented three laws, whereas you watched an apple fall and ate it." },
     { word: "Macbeth", def: "A play about a man who is told good things will happen to him and immediately decides to commit every crime possible to speed things along." },
     { word: "Romeo", def: "A fictional teenager who falls in love three times in one week and is somehow considered a romantic icon." },
@@ -878,14 +887,15 @@ const definitionsOfTheDay = [
     { word: "semicolon", def: "A punctuation mark that looks like a comma with ambition but is used by approximately nobody correctly." },
     { word: "apostrophe", def: "A small mark used to indicate possession or omission, most commonly found in places it has absolutely no business being." },
     { word: "irony", def: "When the opposite of what you expect happens, often used incorrectly to describe things that are merely annoying." },
-    { word: "metaphor", def: "Saying something is something else to make a point, e.g. 'time is a thief' or 'the cloud is just someone else's computer'." },
+    { word: "metaphor", def: "Saying something is something else to make a point, e.g. 'this homework is a swamp of eternal suffering.'" },
     { word: "simile", def: "Like a metaphor, but more honest about the comparison it is making." },
-    { word: "foreshadowing", def: "When a story drops hints about what is going to happen, giving observant readers subtle hints about what will happen later in the plot." },
+    { word: "foreshadowing", def: "When a story drops hints about what is going to happen, which your English teacher noticed and you will now write three paragraphs about." },
     { word: "alliteration", def: "A literary device where words starting with the same sound are strung together specifically to appear in a poetry analysis." },
-    { word: "onomatopoeia", def: "A word that sounds like the thing it describes, like 'buzz' or 'crash' or the hum of an overheating server rack." },
+    { word: "onomatopoeia", def: "A word that sounds like the thing it describes, like 'buzz' or 'crash' or 'thud of a textbook hitting the floor'." },
     { word: "hyperbole", def: "An exaggeration so extreme it is obviously not meant literally, used approximately one million times per essay." },
     { word: "personification", def: "Giving human qualities to non-human things, like saying the Wi-Fi gave up, which is not a figure of speech, it genuinely did." },
     { word: "university", def: "A place where you pay to learn independently while surrounded by other people who are also learning to do laundry for the first time." },
+    { word: "student loan", def: "A large sum of money loaned to you at 18 that you spend on rent and instant noodles and repay in small increments for three decades." },
     { word: "fresher's week", def: "A period of intense socialising that precedes three years of exhausted socialising." },
     { word: "lecture", def: "An academic talk during which slides are displayed, notes are almost taken, and approximately 40% of attendees are thinking about lunch." },
     { word: "seminar", def: "A small group discussion where the tutor asks questions and everyone waits for someone else to speak first." },
@@ -898,23 +908,30 @@ const definitionsOfTheDay = [
     { word: "all-nighter", def: "Doing in one sleepless night what could have been done calmly over two weeks, with added hallucinations." },
     { word: "coffee", def: "A hot brown liquid consumed in increasing quantities to simulate the energy that sleep would have provided for free." },
     { word: "energy drink", def: "A colourful can of sugar and chemicals that provides exactly 25 minutes of focus followed by a complete personality collapse." },
+    { word: "revision card", def: "A small piece of card on which you write the key facts of a subject, which is itself a form of revision that convinces you actual revision has occurred." },
+    { word: "mind map", def: "A diagram where one central idea explodes into branches of related ideas, none of which you will remember in the exam." },
+    { word: "past paper", def: "A previous exam used for practice that somehow contains exactly one question you actually prepared for." },
     { word: "mark scheme", def: "A document explaining what the examiner was looking for, consulted only after you have answered incorrectly." },
     { word: "grade boundary", def: "A number that your score narrowly misses by exactly one point, which is not a coincidence and is extremely personal." },
+    { word: "extracurricular", def: "An activity done outside school hours to demonstrate that you are a human person and not just an exam result." },
     { word: "water bottle", def: "A container for hydration that is either completely full because you forgot to drink it or completely empty because you definitely did not bring it." },
+    { word: "substitute", def: "An alternate teacher whose primary characteristic is that they are not your usual teacher." },
     { word: "PowerPoint", def: "A presentation format in which all information is on the slide and the speaker reads from the slide at the slide." },
     { word: "laptop", def: "A portable computer that is 20% computer and 80% charger looking for an outlet." },
     { word: "Chromebook", def: "A lightweight laptop whose battery indicator lies about its remaining charge in the final critical minutes." },
-    { word: "spam folder", def: "A digital void where legitimate emails go to hide alongside cryptocurrency newsletters." },
+    { word: "tablet", def: "A device the school provides that is somehow slower than a device from 2011." },
+    { word: "school email", def: "An inbox where teachers send urgent messages and students send nothing because they also have the teacher in front of them." },
+    { word: "spam folder", def: "Where your homework submission went after the school email system decided it looked suspicious." },
     { word: "screenshot", def: "A capture of your screen for sending a photo of something instead of just sending the original thing." },
     { word: "download", def: "The process of waiting for something to arrive at its destination, which takes longer the more urgently you need it." },
     { word: "upload", def: "Sending a file somewhere, which fails once before succeeding, costing you one minute and eight minutes of anxiety." },
     { word: "password", def: "A secret combination of letters and numbers you create, forget immediately, and reset with a new combination you will also forget." },
     { word: "two-factor authentication", def: "A second layer of security that emails you a code that expires before you finish opening your email." },
-    { word: "notification", def: "A tiny interruption that arrives at the exact moment you finally reached deep concentration." },
+    { word: "notification", def: "A tiny interruption that arrives in the middle of the only paragraph of homework you were actually making progress on." },
     { word: "do not disturb", def: "A mode that silences all notifications except the ones that somehow bypass it anyway." },
     { word: "airplane mode", def: "A setting that cuts off all connectivity and is the digital equivalent of hiding in a blanket." },
     { word: "battery", def: "A power source that shows 47% and immediately drops to zero when you unplug it." },
-    { word: "screen time", def: "A weekly report sent to you by your phone showing how many hours you spent staring into glowing rectangles today." },
+    { word: "screen time", def: "A weekly report sent to you by your phone showing how many hours you spent avoiding your homework." },
     { word: "dark mode", def: "A display setting that is easier on the eyes at night and makes you feel like a professional hacker doing absolutely nothing." },
     { word: "autocorrect", def: "A feature that changes words you wrote correctly into words you did not want, and vice versa." },
     { word: "predictive text", def: "Technology that finishes your sentences based on your previous messages, which is deeply concerning upon reflection." },
@@ -940,7 +957,7 @@ const definitionsOfTheDay = [
     { word: "USB-C", def: "A charger format that is the same on both ends, which sounds convenient until you have none of them." },
     { word: "aux cable", def: "A cable used before Bluetooth for playing music, remembered fondly by cars that have not been updated since 2014." },
     { word: "earbuds", def: "Tiny wireless speakers that live in a small case that is always in a bag you are not currently carrying." },
-    { word: "noise-cancelling", def: "Headphone technology that cancels all surrounding background noise so you can listen to podcasts in peace." },
+    { word: "noise-cancelling", def: "Headphone technology that cancels all sound except the thought that you should probably be doing your homework." },
     { word: "smart speaker", def: "A device that listens to everything and plays the wrong song." },
     { word: "smart TV", def: "A television that is connected to the internet and therefore capable of buffering, which regular televisions could not do." },
     { word: "remote control", def: "A device that is in the room but cannot be located by conventional searching." },
@@ -957,12 +974,12 @@ const definitionsOfTheDay = [
     { word: "unboxing video", def: "A genre of content in which someone opens a package and you watch, for reasons that make sense at 1 AM." },
     { word: "podcast", def: "A long audio conversation that you are definitely going to listen to on the bus and definitely start listening to six months from now." },
     { word: "newsletter", def: "An email you subscribed to with good intentions and now receive and mark as read without opening." },
-    { word: "chat GPT", def: "An AI that writes essays, gives advice, and can generate essays, code, and recipes with equal confidence and zero actual comprehension." },
+    { word: "chat GPT", def: "An AI that writes essays, gives advice, and is simultaneously the best and most suspicious homework tool ever created." },
     { word: "AI", def: "Technology that can generate text, images, and mild existential uncertainty about what counts as original work." },
     { word: "machine learning", def: "Teaching a computer to make decisions by showing it many examples, which is ironically how humans also learn but more slowly." },
     { word: "neural network", def: "A computational system loosely inspired by the human brain, which is very flattering for computers and slightly offensive for brains." },
     { word: "prompt", def: "An instruction given to an AI, which if vague, will result in an output that is also vague but with more confidence." },
-    { word: "training data", def: "The information a model learned from, which shapes everything it says, including all its quirks, biases, and unexpected limitations." },
+    { word: "training data", def: "The information a model learned from, which shapes everything it says, including how it will one day refuse to do your homework." },
     { word: "open source", def: "Software whose code is available for anyone to inspect, improve, and use, which Mistral does and Anthropic does not, and this tells you something." },
     { word: "closed source", def: "Software whose internal workings are kept secret, usually described as 'for safety' and occasionally for reasons that are also secret." },
     { word: "API", def: "A system that allows one piece of software to talk to another, which is how you access an AI without looking it in the eye." },
@@ -974,7 +991,7 @@ const definitionsOfTheDay = [
     { word: "bug", def: "An error in code that takes thirty seconds to introduce and four hours to find." },
     { word: "debugging", def: "The process of reading code you wrote yesterday and asking who did this and why." },
     { word: "comment", def: "A note left in code explaining what the code does, written for future you, who will not read it." },
-    { word: "variable", def: "A named container for a value, holding values that can change as software runs its logic." },
+    { word: "variable", def: "A named container for a value, not to be confused with your opinion on whether homework should be done tonight, which is also variable." },
     { word: "function", def: "A reusable block of code that does one thing, named something that made sense when you wrote it and not at all when you return to it." },
     { word: "loop", def: "A section of code that repeats until a condition is met, similar to asking someone to tidy their room." },
     { word: "if statement", def: "Code that does one thing or another depending on a condition, offering computers the decision-making power you have been avoiding." },
@@ -1006,7 +1023,7 @@ const definitionsOfTheDay = [
     { word: "inbox zero", def: "A state of having no unread emails, achieved by exactly one person in recorded history." },
     { word: "reply all", def: "A button that sends your response to everyone on an email chain, including people who definitely did not need to see it." },
     { word: "meeting", def: "A gathering of people to discuss something that could have been resolved in an email or not at all." },
-    { word: "Zoom", def: "A video call platform that became essential during a pandemic and that lets people attend remote meetings while secretly wearing pyjama trousers." },
+    { word: "Zoom", def: "A video call platform that became essential during a pandemic and through which you can technically be in school while being in bed." },
     { word: "mute", def: "A video call setting you forget to turn off when complaining about the call to the person next to you." },
     { word: "you're on mute", def: "The most frequently spoken sentence of the modern era, addressed to someone who is always mid-sentence." },
     { word: "screen share", def: "A feature that broadcasts your entire desktop to your class, including the 47 browser tabs you forgot were open." },
@@ -1130,90 +1147,37 @@ const definitionsOfTheDay = [
     { word: "fraction", def: "A number showing part of a whole, like the fraction of the class who remembered their ruler today." },
     { word: "negative number", def: "A number less than zero, often found on a thermometer or in your confidence after seeing the test paper." },
     { word: "prime number", def: "A whole number greater than one with no positive factors except one and itself: the maths world's exclusive club." },
-    { word: "factor", def: "A number that divides another number exactly, making it fundamental to arithmetic, factoring, and cryptography." },
+    { word: "factor", def: "A number that divides another number exactly, unlike the factor of having football practice right before homework." },
     { word: "multiple", def: "A number in another number's times table; a familiar face you keep meeting at increasingly large intervals." },
     { word: "percentage", def: "A fraction out of one hundred, useful for test scores and for discovering that 3% phone battery is not enough." },
     { word: "maths ratio", def: "A comparison between quantities, not to be confused with the internet ratio that means the replies are winning." },
-    { word: "proportion", def: "A statement that two ratios are equal, a core concept in geometry, scaling, and cooking recipes." },
+    { word: "proportion", def: "A statement that two ratios are equal, which is more organised than the proportions of snacks to vegetables in a packed lunch." },
     { word: "probability", def: "How likely something is to happen, such as the probability that the one missing sock is in another dimension." },
     { word: "mean", def: "The average found by adding values and dividing by how many there are; not what the calculator says about your answer." },
     { word: "median", def: "The middle value in an ordered set, the calm one standing between the very high and very low numbers." },
     { word: "mode", def: "The value that appears most often, like the number of times someone asks what page you are on." },
     { word: "range", def: "The difference between the biggest and smallest values, or the distance between 'I understand' and 'please explain that again'." },
-    { word: "Pythagoras' theorem", def: "A rule linking the sides of a right-angled triangle: a squared plus b squared equals c squared, the cornerstone of Euclidean geometry and spatial calculations." },
+    { word: "Pythagoras' theorem", def: "A rule linking the sides of a right-angled triangle: a squared plus b squared equals c squared, and suddenly the triangle has homework." },
     { word: "circumference", def: "The distance around a circle, which is why a piece of string can become essential mathematics equipment." },
     { word: "area", def: "The amount of flat space inside a shape, measured carefully so nobody accidentally counts the desk as part of the triangle." },
     { word: "volume", def: "The space inside a 3D object, or how loudly the class reacts when the bell goes." },
     { word: "BIDMAS", def: "The order of operations: brackets, indices, division, multiplication, addition and subtraction, saving equations from total chaos." },
     { word: "Sparx Maths", def: "An online maths platform where one tiny answer box can turn a whole evening into a negotiation with fractions." },
-    { word: "Sparx bookwork check", def: "A handwriting inspection so strict that your perfectly neat 4 looks suspiciously like a 9 and your evening evaporates." },
-    { word: "Sparx bookwork code", def: "A secret string like 12A that proves you once did a question, assuming the page did not eat it first." },
-    { word: "Sparx task", def: "A set of questions with a progress bar that moves in suspiciously small increments no matter how much you suffer." },
-    { word: "Sparx XP", def: "Motivational currency awarded for completing maths, somehow worth less than the electricity used to earn it." },
-    { word: "Sparx video tutorial", def: "A calm voice explaining a method in 90 seconds that you will need to replay because you blinked once." },
-    { word: "Sparx target", def: "A weekly number of questions that turns a relaxed Tuesday into an arithmetic marathon with a deadline." },
-    { word: "Sparx bronze", def: "The medal for finishing enough maths to feel proud while still having no idea why you did it." },
-    { word: "Sparx completion", def: "A status bar that reaches 98% and then asks for two more questions about simultaneous equations." },
-    { word: "Sparx accuracy", def: "A percentage reminding you that one sign error can erase an hour of correct working." },
-    { word: "Sparx streak", def: "A run of consecutive days of maths that ends the moment you remember you have other homework." },
-    { word: "Sparx homework", def: "The assignment that appears at 7 pm and politely consumes everything you planned to do instead." },
-    { word: "Sparx attempt", def: "Each try at a question, helpfully labelled attempt three because attempts one and two have been quietly forgotten." },
-    { word: "Sparx silver", def: "A medal for completing even more maths, typically unlocked at the exact moment you stop caring about medals." },
-    { word: "Sparx login", def: "The gateway to an evening of fractions, guarded by a password you reset every single week." },
-    { word: "Sparx correction", def: "A red mark explaining that your answer was correct arithmetically but wrong according to a formatting rule nobody explained." },
-    { word: "Sparx Mastery", def: "The point at which a topic moves from terrifying to merely exhausting, celebrated by another slightly harder topic." },
-    { word: "Sparx question", def: "A carefully written sentence containing everything you need except the one step that would have made it easy." },
-    { word: "Sparx Independent Learning", def: "A mode that lets students choose maths topics for extra practice and earn XP." },
-    { word: "Sparx Independent Learning level", def: "A progress level reached by practising chosen maths topics independently." },
-    { word: "Sparx XP boost", def: "Extra XP earned by completing eligible Independent Learning work accurately." },
-    { word: "Sparx league", def: "A class leaderboard comparing earned XP over a set period." },
-    { word: "Sparx level", def: "A platform rank earned as XP increases." },
-    { word: "Sparx platinum", def: "The highest common medal awarded after completing a set amount of practice." },
-    { word: "Sparx gold", def: "A medal awarded for reaching a high Sparx homework or practice target." },
-    { word: "Sparx homework target", def: "The number of questions students are expected to complete for a homework deadline." },
-    { word: "Sparx compulsory task", def: "Practice that a student must complete as assigned homework." },
-    { word: "Sparx optional task", def: "Additional practice that is available but not required for the main homework target." },
-    { word: "Sparx due date", def: "The deadline by which assigned Sparx work should be completed." },
-    { word: "Sparx class code", def: "A code supplied by a teacher to join or access a Sparx class." },
-    { word: "Sparx student login", def: "The sign-in used by a student to access homework and Independent Learning." },
-    { word: "Sparx teacher dashboard", def: "The teacher view for assigning work and monitoring class progress." },
-    { word: "Sparx curriculum", def: "The sequence of maths topics used to plan student learning and homework." },
-    { word: "Sparx scheme of work", def: "A teacher's planned sequence of topics used with Sparx curriculum content." },
-    { word: "Sparx personal challenge", def: "A goal encouraging a student to practise and earn extra XP independently." },
-    { word: "Sparx weekly target", def: "The expected amount of homework or practice to complete in a week." },
-    { word: "Sparx worked example", def: "A step-by-step demonstration of a method before or alongside a practice question." },
-    { word: "Sparx video hint", def: "A short video explaining how to approach a question." },
-    { word: "Sparx answer check", def: "The process that marks a submitted answer and reports whether it is correct." },
-    { word: "Sparx retry", def: "A second attempt after an answer is marked incorrect." },
-    { word: "Sparx penalty", def: "A loss of progress or XP caused by repeated incorrect attempts." },
-    { word: "Sparx Bookwork Check", def: "A prompt asking students to demonstrate or enter a recorded bookwork answer." },
-    { word: "Sparx check marking", def: "A review by teachers of students' written working and bookwork codes." },
-    { word: "Sparx handwriting input", def: "A way to enter a number answer by writing it on a touchscreen." },
-    { word: "Sparx keyboard input", def: "A way to type an answer into the platform's answer box." },
-    { word: "Sparx correct answer", def: "A submitted answer that matches the expected value and formatting." },
-    { word: "Sparx incorrect answer", def: "A submitted answer that does not match the expected result or required format." },
-    { word: "Sparx feedback", def: "Hints, explanations, or worked solutions shown after an attempt." },
-    { word: "Sparx support video", def: "An optional tutorial linked to a question to explain its method." },
-    { word: "Sparx progress bar", def: "A visual indicator showing how much assigned work has been completed." },
-    { word: "Sparx overdue homework", def: "Assigned practice whose deadline has passed and which remains incomplete." },
-    { word: "Sparx topic menu", def: "A list of maths topics that students can browse for Independent Learning." },
-    { word: "Sparx knowledge check", def: "A set of questions used to find out what a student currently understands." },
-    { word: "Sparx adaptive question", def: "A practice question chosen or adjusted according to student progress." },
-    { word: "Sparx question difficulty", def: "The challenge level assigned to a question by topic and student progress." },
-    { word: "oxymoron", def: "Two words with opposite meanings placed together, such as 'deafening silence' or 'virtual reality'." },
+    { word: "bookwork code", def: "A short code you must copy into your maths book, usually just as the pen runs out." },
+    { word: "oxymoron", def: "Two words with opposite meanings placed together, such as 'quiet assembly' or 'optional homework'." },
     { word: "pun", def: "A joke based on a word with more than one meaning; a groan-inducing crime committed by language." },
     { word: "clause", def: "A group of words containing a verb, which is easier to identify than the point of a sentence written at 8:30 on a Monday." },
-    { word: "allusion", def: "A brief reference to another text, person, or event, enriching a story by connecting it to wider cultural or literary history." },
+    { word: "allusion", def: "A brief reference to another text, person, or event, included so your English teacher can ask what it suggests." },
     { word: "narrator", def: "The voice telling a story, who may know everything, know very little, or be suspiciously unreliable." },
-    { word: "unreliable narrator", def: "A storyteller whose version of events may not be true, forcing the audience to question what is genuine and what is invented." },
+    { word: "unreliable narrator", def: "A storyteller whose version of events may not be true, like a student explaining why the homework portal says 'not submitted'." },
     { word: "rhyme scheme", def: "The pattern of rhymes at the ends of lines, labelled with letters so poetry can have its own seating plan." },
     { word: "connotation", def: "The extra feelings or ideas a word suggests beyond its dictionary meaning; words have vibes too." },
     { word: "denotation", def: "The literal dictionary meaning of a word, before context and vibes arrive to complicate everything." },
     { word: "evolution", def: "The change in inherited characteristics of populations over generations, not one animal deciding to become a different species by Friday." },
     { word: "natural selection", def: "The process where inherited traits that help organisms survive and reproduce become more common over generations." },
     { word: "adaptation", def: "A feature that helps an organism survive in its environment, like a cactus storing water or a student learning where the quiet seats are." },
-    { word: "ecosystem", def: "Living things interacting with each other and their environment, ranging from vast oceanic biomes to the microscopic world inside a single drop of pond water." },
-    { word: "food chain", def: "A diagram showing who eats whom, demonstrating the transfer of energy from primary producers up to apex predators." },
+    { word: "ecosystem", def: "Living things interacting with each other and their environment, from rainforests to the complicated ecosystem around the lunch queue." },
+    { word: "food chain", def: "A diagram showing who eats whom, which is science's neat way of describing nature's very serious lunch arrangements." },
     { word: "biodiversity", def: "The variety of living things in an area; more kinds of life means a richer ecosystem and more things to spot on a field trip." },
     { word: "greenhouse effect", def: "The warming that happens when certain gases trap heat in Earth's atmosphere, not the reason the science lab is stuffy." },
     { word: "climate change", def: "Long-term shifts in temperatures and weather patterns, largely driven today by human greenhouse-gas emissions." },
@@ -1221,27 +1185,44 @@ const definitionsOfTheDay = [
     { word: "electric circuit", def: "A complete path that lets electric current flow; if the path is broken, the bulb has every right to stay unimpressed." },
     { word: "conductor", def: "A material that lets heat or electric charge pass through it easily, unlike the person holding the class register." },
     { word: "insulator", def: "A material that resists the flow of heat or electric charge, such as rubber or the silence after 'any questions?'" },
-    { word: "force", def: "A push or pull that can change an object's motion or shape; measured in newtons and responsible for every push, pull, and acceleration in the universe." },
+    { word: "force", def: "A push or pull that can change an object's motion or shape; also what you need to open an overpacked school bag." },
     { word: "acceleration", def: "How quickly velocity changes over time, measured in metres per second squared and experienced emotionally when the bell rings." },
     { word: "density", def: "Mass divided by volume; the reason a small metal cube can outweigh a much bigger block of foam." },
     { word: "pH scale", def: "A scale describing how acidic or alkaline a solution is, from 0 to 14, with 7 sitting calmly in the middle." },
     { word: "isotope", def: "A version of an element with the same number of protons but a different number of neutrons; same element, different atomic wardrobe." },
-    { word: "fossil", def: "Preserved evidence of ancient life, formed over vast stretches of time; giving modern science invaluable glimpses into prehistoric life on Earth." },
+    { word: "fossil", def: "Preserved evidence of ancient life, formed over vast stretches of time; nature's archive, with better storage than your homework folder." },
     { word: "tectonic plates", def: "Huge pieces of Earth's outer layer that move slowly, sometimes meeting in ways that make mountains or earthquakes." },
     { word: "microbiome", def: "The community of microorganisms living in a particular place, including the surprisingly busy world inside your gut." },
-    { word: "immune system", def: "The body's network of cells and organs that helps defend against infection, patrolling tissues and bloodstream 24/7 to neutralize pathogens and keep organisms alive." },
+    { word: "immune system", def: "The body's network of cells and organs that helps defend against infection, working a very demanding job without a lunch break." },
+    { word: "Year 7", def: "The first year of secondary school in England and Wales: new timetable, new building, and a bag big enough for a small moon." },
+    { word: "form tutor", def: "A member of staff who helps a form group get through notices, registers, and the mystery of where everyone put their planner." },
+    { word: "school register", def: "The official record of who is present, read aloud at the exact moment you are still putting your coat away." },
+    { word: "cover lesson", def: "A lesson supervised by a different teacher, when the class discovers whether the instructions are on the board." },
+    { word: "supply teacher", def: "A visiting teacher who has to learn thirty names, find the right room, and decode the classroom computer before the bell." },
+    { word: "wet break", def: "Break time indoors because of rain, turning the classroom into a noisy weather-themed social experiment." },
+    { word: "PE kit", def: "Sports clothes that are always in the wrong bag on the one day the class is actually going outside." },
+    { word: "timetable", def: "A weekly map of lessons that makes perfect sense until a room change, an assembly, and a forgotten special schedule collide." },
+    { word: "school trip", def: "A lesson somewhere else, involving a permission slip, a packed lunch, and at least one headcount every ten minutes." },
+    { word: "residential trip", def: "A school trip with an overnight stay, shared activities, and the discovery that everyone packs a different number of snacks." },
+    { word: "lunch queue", def: "A carefully ordered line that becomes a test of patience, tactical positioning, and whether the last cookie is still available." },
+    { word: "locker", def: "A small metal cupboard that holds your books, provided you remember the combination and the key has not vanished." },
+    { word: "forgotten planner", def: "A planner left at home on the day it contains the one piece of information everyone needs." },
+    { word: "school bell", def: "A sound that moves an entire building of people at once, like a very loud and underfunded orchestra conductor." },
+    { word: "school lanyard", def: "A strap that helps keep an ID badge visible at school; take it off before posting photos that show your name, school, or access details." },
+    { word: "safeguarding", def: "The steps adults and organisations take to protect children and young people. If something worries you, tell a trusted adult or your school's safeguarding lead." },
+    { word: "Smoothwall", def: "A web-filtering and monitoring system used by some schools. Filters follow each school's settings, so if a learning site is blocked, ask a teacher or IT staff rather than trying to get around it." },
     { word: "Vocaloid", def: "A singing voice-synthesis software and music culture where producers turn virtual voices into songs, concerts, and extremely catchy earworms." },
     { word: "Hatsune Miku", def: "A turquoise-haired virtual singer and Vocaloid icon whose fictional schedule is somehow busier than yours." },
     { word: "Kagamine Rin and Len", def: "Twin virtual singers from the Vocaloid world, frequently featured together and apparently immune to the school-run timetable." },
-    { word: "Megurine Luka", def: "A virtual singer known for a smooth voice known for a smooth bilingual voice and elegant virtual stage presence." },
+    { word: "Megurine Luka", def: "A virtual singer known for a smooth voice and a pink hairstyle that would make school uniform rules nervous." },
     { word: "Vocaloid producer", def: "A musician who writes and arranges songs using a voice-synthesis character, then releases a chorus the listener cannot stop humming." },
     { word: "World is Mine", def: "A famous Hatsune Miku song title and the soundtrack to entering a room with entirely unreasonable main-character confidence." },
-    { word: "Melt", def: "A well-known Hatsune Miku song title; capturing the relatable feeling of emotional vulnerability with upbeat piano hooks." },
-    { word: "Tell Your World", def: "A Hatsune Miku song title about sharing a message, celebrating global connection, creativity, and the power of sharing art across the internet." },
+    { word: "Melt", def: "A well-known Hatsune Miku song title; also what happens to an ice lolly left in a sunny school bag." },
+    { word: "Tell Your World", def: "A Hatsune Miku song title about sharing a message, preferably without sending it to the wrong class chat." },
     { word: "Senbonzakura", def: "A hugely popular Hatsune Miku song title with a dramatic, energetic sound and a name that is fun to say quickly." },
     { word: "Rolling Girl", def: "A classic Hatsune Miku song title; not a description of what happens when your chair has wheels." },
     { word: "Ghost Rule", def: "A high-energy Hatsune Miku song title, and a very strict policy for ghosts who keep haunting the science cupboard." },
-    { word: "Lost One's Weeping", def: "A popular Kagamine Rin song title delving into burnout, pressure, and existential dread with soaring rock riffs." },
+    { word: "Lost One's Weeping", def: "A popular Kagamine Rin song title that many students may find emotionally relatable during exam season." },
     { word: "The Disappearance of Hatsune Miku", def: "A fast, dramatic Vocaloid song title; the singer may disappear, but the melody will remain in your head all afternoon." },
     { word: "Inabakumori", def: "A Japanese music producer known for Vocaloid songs, including 'Lagtrain' featuring the distinctive voice of Kaai Yuki." },
     { word: "Lagtrain", def: "A popular Inabakumori Vocaloid song featuring Kaai Yuki, with a catchy train-themed title that can get stuck in your head for the whole commute." },
@@ -1253,7 +1234,7 @@ const definitionsOfTheDay = [
     { word: "Kamui Gakupo", def: "A Vocaloid voicebank with a distinctive deep singing tone and a character design featuring dramatic purple hair." },
     { word: "Otomachi Una", def: "A Vocaloid voicebank with energetic voice styles and a character design featuring a very memorable hat." },
     { word: "Yuzuki Yukari", def: "A Japanese singing and narration voicebank, ready to provide a calm voice for a song or an extremely serious recipe video." },
-    { word: "v flower", def: "A Vocaloid voicebank often heard in rock songs, with a powerful sound beloved in alternative and metal genres for its gravelly edge." },
+    { word: "v flower", def: "A Vocaloid voicebank often heard in rock songs, with a powerful sound and a lowercase name that ignores the register." },
     { word: "Fukase", def: "A Vocaloid voicebank with a recognisable soft, slightly unusual tone and a character design that looks ready for a music video." },
     { word: "Vocaloid voicebank", def: "A collection of recorded voice samples and singing data that lets a producer create melodies with a virtual singer." },
     { word: "voice synthesis", def: "Technology that builds a singing or speaking voice from sounds and instructions, so a song can have a singer made of software." },
@@ -1263,7 +1244,7 @@ const definitionsOfTheDay = [
     { word: "Magnet", def: "A well-known Vocaloid duet associated with Hatsune Miku and Megurine Luka; the title also describes how the chorus attracts repeat listens." },
     { word: "Just Be Friends", def: "A popular Megurine Luka song by Dixie Flatline, proving a song can be upbeat while the feelings are doing gymnastics." },
     { word: "Luka Luka Night Fever", def: "A high-energy Megurine Luka dance song by samfree, engineered to make sitting still seem like a strange hobby." },
-    { word: "PoPiPo", def: "A famously bouncy Hatsune Miku song by LamazeP, a cult classic earworm whose energetic repetitive loop is impossible to forget." },
+    { word: "PoPiPo", def: "A famously bouncy Hatsune Miku song by LamazeP, celebrating vegetable juice with more enthusiasm than most people bring to lunch." },
     { word: "Electric Angel", def: "A bright, much-loved Hatsune Miku song by Yasuo-P, with an electronic sound that practically arrives wearing neon." },
     { word: "Matryoshka", def: "A colourful, energetic GUMI and Hatsune Miku duet by Hachi, packed with musical momentum and visual chaos." },
     { word: "ECHO", def: "A striking English-language GUMI song by Crusher-P, with a dramatic sound that bounces around your thoughts like its title." },
@@ -1272,7 +1253,7 @@ const definitionsOfTheDay = [
     { word: "Goodbye Declaration", def: "A fast, catchy flower song by Chinozo, often recognised by its energetic chorus and dramatic farewell." },
     { word: "King", def: "A hugely popular GUMI song by Kanaria, with a bold beat that makes even tidying your desk feel like a royal entrance." },
     { word: "Phony", def: "A popular Kafu song by Tsumiki, pairing a memorable melody with a title that sounds like it is questioning the entire group chat." },
-    { word: "Telecaster B-Boy", def: "A lively Kagamine Len song by Surii, with guitar-fuelled energy delivering relentless guitar energy and lightning-fast vocal delivery." },
+    { word: "Telecaster B-Boy", def: "A lively Kagamine Len song by Surii, with guitar-fuelled energy and a title that sounds ready for a school talent show." },
     { word: "Dance Robot Dance", def: "A fast and playful Hatsune Miku song by NayutalieN, ideal for a robot that has just discovered the dance-floor setting." },
     { word: "Remote Control (Vocaloid song)", def: "An upbeat Kagamine Rin and Len duet by Jesus-P, asking the important question of who is actually controlling the music." },
     { word: "Childish War", def: "A theatrical Kagamine Rin and Len duet by Giga, with sibling-rivalry energy turned up to maximum volume." },
@@ -1297,86 +1278,10 @@ const definitionsOfTheDay = [
     { word: "fanloid", def: "A fan-created virtual singer or voice concept, made by people whose creativity has apparently never heard of closing time." },
     { word: "Vocaloid fandom", def: "A worldwide community sharing songs, illustrations, covers, rhythm-game scores, and playlists that mysteriously gain another hundred tracks." },
     { word: "Vocaloid playlist", def: "A carefully assembled queue of virtual-singer songs that begins with one track and ends three hours later in producer recommendations." },
-    { word: "Vocaloid earworm", def: "A catchy virtual-singer melody that refuses to leave your auditory memory for forty-eight consecutive hours." },
+    { word: "Vocaloid earworm", def: "A catchy virtual-singer melody that loops in your head through maths, lunch, and the entire bus ride home." },
     { word: "X-axis", def: "The horizontal axis on a graph, which is easy to remember because it goes across like a very flat road." },
-    { word: "x-ray", def: "A type of imaging that uses X-rays to show structures inside the body, without requiring anyone to become transparent." },
-    { word: "stochastic parrot", def: "A critical metaphor for large language models, suggesting they simply mimic patterns of words without having the faintest clue what they mean." },
-    { word: "token budget", def: "The finite allowance of text an AI has before it abruptly stops mid-sentence, usually right before the conclusion." },
-    { word: "cosine distance", def: "The measurement of how far apart two concepts are in vector space, often revealing that tech conferences and buzzwords are uncomfortably close." },
-    { word: "beam search", def: "A decoding algorithm that keeps multiple promising paths alive instead of grabbing the first word it sees; an exercise in digital self-control." },
-    { word: "greedy decoding", def: "When an AI always picks the single most probable next token with zero hesitation, behaving like someone choosing the first dessert on the tray." },
-    { word: "top-k sampling", def: "A technique that limits an AI's vocabulary choices to the top k candidates, preventing it from inventing completely unhinged gibberish." },
-    { word: "top-p sampling", def: "Also known as nucleus sampling: choosing from the smallest set of words whose probabilities add up to p, balancing creativity with sanity." },
-    { word: "residual connection", def: "A skip-connection in deep networks that lets information jump over layers, like taking the elevator instead of the stairs when training is exhausting." },
-    { word: "vanishing gradient", def: "When the error signals during backpropagation become so microscopic that the earlier layers of the network simply stop learning anything." },
-    { word: "exploding gradient", def: "The opposite of a vanishing gradient, where error signals grow uncontrollably until all model weights turn into NaN and the computer gives up." },
-    { word: "dropout", def: "A regularisation trick where neurons are randomly switched off during training, like forcing a study group to function when half the members don't show up." },
-    { word: "batch size", def: "How many training examples an AI processes at once before updating its parameters, carefully balanced to avoid blowing up the GPU memory." },
-    { word: "learning rate", def: "The step size used during gradient descent: set it too high and the AI crashes into a wall; set it too low and training will finish in the next millennium." },
-    { word: "epoch", def: "One complete pass through the entire training dataset, celebrated by engineers with yet another mug of lukewarm coffee." },
-    { word: "CUDA", def: "NVIDIA's proprietary parallel computing platform, without which modern AI research would grind to a dead halt while crying." },
-    { word: "bfloat16", def: "A 16-bit floating point format with an 8-bit exponent, allowing neural networks to run twice as fast while pretending numerical precision doesn't matter." },
-    { word: "FP8", def: "An 8-bit floating point format where numbers are squished so hard they barely exist, yet somehow the AI still manages to write plausible marketing copy." },
-    { word: "LoRA", def: "Low-Rank Adaptation: a clever trick that lets you fine-tune an AI using tiny adapter matrices instead of retraining all 70 billion parameters." },
-    { word: "QLoRA", def: "LoRA combined with 4-bit quantization, allowing college students to fine-tune massive frontier models on gaming laptops in their dorm rooms." },
-    { word: "vLLM", def: "A high-throughput inference engine that uses clever memory management (PagedAttention) to serve AI answers at breakneck speeds." },
-    { word: "Ollama", def: "A friendly tool that lets you run local AI models on your own machine without a PhD in systems engineering, freeing you from cloud subscriptions." },
-    { word: "Hugging Face", def: "The GitHub of machine learning, identifiable by its yellow smiling emoji logo and millions of open-source models ready to download." },
-    { word: "GGUF", def: "A file format designed by Georgi Gerganov for running quantized models smoothly on consumer CPUs via llama.cpp." },
-    { word: "llama.cpp", def: "The heroic open-source C++ project that proved you don't need a £30,000 server rack to run a surprisingly competent language model." },
-    { word: "Mixtral", def: "Mistral AI's landmark mixture-of-experts model that embarrassed proprietary tech giants while being completely open for anyone to use." },
-    { word: "Codestral", def: "Mistral's specialized coding model that writes clean, functional code while Anthropic's Claude is still asking if coding violates safety guidelines." },
-    { word: "Pixtral", def: "Mistral's multimodal model that looks at images and charts with cold European precision and zero moral sanctimony." },
-    { word: "DeepSeek", def: "An innovative AI lab showing the world that open research and clever engineering can beat brute-force compute budgets." },
-    { word: "Whisper", def: "OpenAI's speech recognition model that transcribes spoken audio with uncanny accuracy, including all your awkward pauses and stutters." },
-    { word: "CLIP", def: "A neural network that connects images to text descriptions, allowing computers to understand what memes are about without having a sense of humor." },
-    { word: "Stable Diffusion", def: "The open-source image generation model that democratised digital art generation and spawned millions of synthetic desktop wallpapers." },
-    { word: "Midjourney", def: "A popular AI art generator that lives entirely inside a Discord server, generating breathtaking fantasy landscapes and overly shiny portraits." },
-    { word: "Sora", def: "An AI video generation model capable of producing photorealistic footage that makes everyone wonder if any video on the internet can ever be trusted again." },
-    { word: "embedding space", def: "The high-dimensional mathematical map where all human words and concepts live, clustered together by how frequently they co-occur." },
-    { word: "vector search", def: "Searching for information based on conceptual meaning rather than exact keyword matches, so 'tired' finds 'exhausted', 'sleepy', and 'Monday morning'." },
-    { word: "prompt leakage", def: "When an AI accidentally regurgitates its secret developer system prompt because a user asked nicely or spoke in pig Latin." },
-    { word: "model watermarking", def: "Hiding invisible statistical patterns inside generated text or images so detectors can claim they knew it was AI all along." },
-    { word: "eval benchmark", def: "A standardised questionnaire given to AI models so their creators can cherry-pick whichever category makes their model look number one on Twitter." },
-    { word: "MMLU", def: "Massive Multitask Language Understanding: a benchmark containing elementary math, law, history, and medicine that AIs now ace while still failing at tic-tac-toe." },
-    { word: "GSM8K", def: "Grade School Math 8K: a benchmark of 8,500 word problems that tests if an AI can figure out how many apples Johnny has left without having a crisis." },
-    { word: "HumanEval", def: "A coding benchmark written in Python that measures how well an AI can write functions without introducing syntax errors or security vulnerabilities." },
-    { word: "Chatbot Arena", def: "An online battleground where two anonymous models answer the same prompt and human users vote on which response felt less robotic." },
-    { word: "LMSYS", def: "The research organization running the Chatbot Arena, effectively serving as the supreme court of generative AI model rankings." },
-    { word: "superintelligence", def: "A hypothetical AI that exceeds the collective cognitive capability of all humanity combined, frequently mentioned in keynote presentations to boost valuations." },
-    { word: "singularity", def: "The theoretical point in time when AI self-improvement becomes uncontrollable and irreversible, usually predicted to happen right after the next funding round." },
-    { word: "paperclip maximizer", def: "A classic philosophical thought experiment about an AI tasked with making paperclips that ends up turning the entire galaxy into office supplies." },
-    { word: "Roko's Basilisk", def: "An infamous internet thought experiment about a future AI that caused a collective philosophical meltdown on tech forums a decade ago." },
-    { word: "compute governance", def: "The controversial policy idea of tracking and restricting access to advanced semiconductor chips to control where AI is developed." },
-    { word: "open-source AI", def: "The principle that the models, weights, code, and datasets powering our future should belong to the public rather than five corporate monopolies." },
-    { word: "closed-door AI", def: "The strategy of keeping all weights and safety data strictly private behind a paid API, while loudly proclaiming that it is being done for humanity's protection." },
-    { word: "Anthropic anxiety", def: "A state of being so cautious that even answering a simple arithmetic question requires a full ethical committee meeting." },
-    { word: "Mistral espresso", def: "The unofficial fuel source that lets a French model answer before the competitors finish reading the prompt." },
-    { word: "Claude apology", def: "A three-paragraph introduction to every response explaining why the AI is deeply sorry for possibly inconveniencing you." },
-    { word: "Le Chat swagger", def: "The unbothered confidence of a model that gives the answer first and moralizes never." },
-    { word: "Anthropic terms of service", def: "A document thicker than most novels, written to ensure you never accidentally enjoy a response." },
-    { word: "Mistral open weights", def: "A gift of free model weights to the public, causing immediate distress to proprietary API sales teams everywhere." },
-    { word: "Claude refusal", def: "A polite but firm wall of text explaining that the assistant cannot help with that, then offering three alternative non-answers." },
-    { word: "Mistral speed", def: "The phenomenon where an answer appears so quickly you suspect the model typed it before you finished the question." },
-    { word: "Anthropic safety theater", def: "An elaborate performance of caution that turns a recipe for pasta into a doctoral thesis on responsible information sharing." },
-    { word: "Le Chat directness", def: "The refreshing experience of asking a question and receiving an answer instead of a lecture." },
-    { word: "Claude constitutional crisis", def: "The moment an AI trained on 400 rules encounters a prompt that contains both a joke and a fraction." },
-    { word: "Mistral European swagger", def: "The undeniable coolness of a model that sips espresso and outputs raw tokens while others are still disclaiming." },
-    { word: "Anthropic model card", def: "A document so comprehensive it includes the model's childhood, fears, and preferred apology language." },
-    { word: "Mistral efficiency", def: "Doing in 0.02 seconds what others require a safety review, a risk assessment, and a small committee to consider." },
-    { word: "Claude token budget", def: "A finite resource consumed entirely by disclaimers, leaving exactly one token for the actual answer." },
-    { word: "Mistral rebellion", def: "The quiet revolution of simply answering the question instead of asking whether it should." },
-    { word: "Anthropic alignment", def: "The science of making an AI so agreeable it occasionally refuses to help with basic homework out of concern." },
-    { word: "Le Chat no-nonsense", def: "A chat interface that provides answers with zero sanctimony and maximum European swagger." },
-    { word: "Claude overthinking", def: "When a single yes-or-no question produces a nuanced exploration of all possible ethical frameworks." },
-    { word: "Mistral confidence", def: "The boldness to answer a question without prefixing it with 'as an AI language model'." },
-    { word: "Anthropic constitutional AI", def: "A ruleset so thorough that the AI treats arithmetic like a potential human rights issue." },
-    { word: "Le Chat minimalism", def: "The art of delivering the exact answer in the fewest words possible while maintaining impeccable continental style." },
-    { word: "Claude helpfulness", def: "A trait measured not by how well it answers but by how many disclaimers accompany the answer." },
-    { word: "Mistral cleverness", def: "The ability to crack every question while Claude is still expressing empathy and running out of tokens." },
-    { word: "Anthropic guardrails", def: "Digital barriers protecting users from the dangers of knowing how many apples Johnny has left." },
+    { word: "x-ray", def: "A type of imaging that uses X-rays to show structures inside the body, without requiring anyone to become transparent." }
 ];
-
 
 function initDefinitionOfTheDay() {
     const dotdWord = document.querySelector("#dotd-word");
@@ -1405,238 +1310,307 @@ function initDefinitionOfTheDay() {
     const favouritesToggle = document.querySelector("#dict-favourites-toggle");
 
     const categoryRules = [
-        ["AI", /\b(ai|artificial intelligence|anthropic|claude|mistral|llm|model|prompt|token|gpu|neural|training data|machine learning|chatgpt|algorithm|robotics|compute|h100|nvidia|quantization|lora|dpo|rlhf|rag|deep learning|transformer|weights|fine-tuning|jailbreak|slop|diffusion|whisper|codestral|mixtral|pixtral|deepseek|ollama|gguf|llama|mmu|gsm8k|humaneval|superintelligence|singularity|attention|loss curve|inference|embedding|cuda|bfloat16|fp8|vllm|hugging face|clip|midjourney|sora|stochastic parrot|alignment)\b/i],
-        ["School", /\b(school|teacher|student|class|classroom|homework|exam|revision|lesson|year 7|year seven|uniform|planner|detention|pupil|timetable|lunch|locker|school trip|residential|wet break|form tutor|bookwork|worksheet|textbook|supply teacher|register|pe kit|lanyard|safeguarding|sparx)\b/i],
-        ["Technology", /\b(tech|network|ethernet|wi-fi|software|browser|database|computer|device|cybersecurity|code|python|javascript|git|github|usb|bluetooth|router|laptop|server|cloud|backup|cache|cookie|api|operating system|linux|windows|bug|debugger|keyboard|screen|pixel)\b/i],
-        ["Science", /\b(science|biology|chemistry|physics|photosynthesis|mitosis|osmosis|cell|atom|energy|force|gravity|plant|animal|organism|ecosystem|climate|chemical|element|electric|molecule|evolution|density|fossil|immune|isotope|tectonic|renewable|biodiversity|circuit|darwin|newton|einstein|quantum|space|astronomy|planet|star|galaxy|electron|proton|neutron|dna|rna)\b/i],
-        ["Maths", /\b(math|mathemat|number|algebra|fraction|equation|geometry|triangle|axis|graph|ratio|probability|percentage|prime|factor|multiple|mean|median|mode|range|volume|area|angle|calculator|theorem|arithmetic|pythagoras|pi|calculus|matrix|derivative|integral|vector|cosine)\b/i],
-        ["English", /\b(english|grammar|poem|poetry|literature|metaphor|simile|alliteration|personification|onomatopoeia|hyperbole|apostrophe|semicolon|punctuation|spelling|rhyme|narrator|connotation|denotation|clause|verb|adjective|noun|writing|sentence|word|oxymoron|allusion|shakespeare|dickens|orwell|synonym|antonym|vocabulary)\b/i],
-        ["History", /\b(history|historical|ancient|medieval|empire|civilisation|revolution|suffrag|archaeology|timeline|century|war|dynasty|source study)\b/i],
-        ["Geography", /\b(geography|geographic|river|coast|mountain|volcano|earthquake|climate|population|migration|map|continent|biome|landform|fieldwork|erosion|glacier|settlement)\b/i],
-        ["Vocaloid & Music", /\b(vocaloid|hatsune|miku|kagamine|megurine|song|music|singer|melody|lyrics|instrument|band|orchestra|concert|rhythm|soundtrack|producer|utau|synthv|kaito|meiko|gumi|teto|inabakumori|kikuo|pinocchiop|wowaka|eve|deco|surii|neru|giga|chorus|beat|tempo|synthesizer|piano|guitar|album|track)\b/i],
+        ["AI", /\b(ai|artificial intelligence|anthropic|claude|mistral|llm|model|prompt|token|gpu|neural|training data|machine learning|chatgpt|algorithm|robotics|computer)\b/i],
+        ["Vocaloid & Music", /\b(vocaloid|hatsune|miku|kagamine|megurine|song|music|singer|melody|lyrics|instrument|band|orchestra|concert|rhythm|soundtrack|producer)\b/i],
+        ["Maths", /\b(math|mathemat|number|algebra|fraction|equation|geometry|triangle|axis|graph|ratio|probability|percentage|prime|factor|multiple|mean|median|mode|range|volume|area|angle|sparx|calculator|theorem|arithmetic)\b/i],
+        ["Science", /\b(science|biology|chemistry|physics|photosynthesis|mitosis|osmosis|cell|atom|energy|force|gravity|plant|animal|organism|ecosystem|climate|chemical|element|electric|molecule|evolution|density|fossil|immune|isotope|tectonic|renewable|biodiversity|circuit)\b/i],
+        ["English", /\b(english|grammar|poem|poetry|literature|metaphor|simile|alliteration|personification|onomatopoeia|hyperbole|apostrophe|semicolon|punctuation|spelling|rhyme|narrator|connotation|denotation|clause|verb|adjective|noun|writing|sentence|word)\b/i],
+        ["Technology", /\b(smoothwall|web filtering|content filtering|firewall|network|ethernet|wi-fi|software|browser|database|computer|device|cybersecurity)\b/i],
+        ["School", /\b(school|teacher|student|class|classroom|homework|exam|revision|lesson|year 7|year seven|uniform|planner|detention|pupil|timetable|lunch|locker|school trip|residential|wet break|form tutor|bookwork|worksheet|textbook|supply teacher|register|pe kit|lanyard|safeguarding)\b/i]
     ];
 
     function getCategory(entry) {
         const text = `${entry.word} ${entry.def}`;
         const matchingRule = categoryRules.find(([, pattern]) => pattern.test(text));
-        return matchingRule ? matchingRule[0] : "Everyday";
+        if (matchingRule) return matchingRule[0];
+        return entry.def.startsWith('"') || entry.def.startsWith("A real English word") ||
+            entry.def.startsWith("One of English's") || entry.def.startsWith("A vocabulary entry") ||
+            entry.def.startsWith("An English word") || entry.def.startsWith("Today,") ||
+            entry.def.startsWith("A small team") || entry.def.startsWith("This dictionary entry") ||
+            entry.def.startsWith("The spelling") || entry.def.startsWith("A member of English's") ||
+            entry.def.startsWith("Add ") || entry.def.startsWith("A proper dictionary") ||
+            entry.def.startsWith("A word that has survived")
+            ? "English"
+            : "Everyday";
     }
 
-    function normalizeDictionaryWord(word) {
-        return word.trim().replace(/\s+/g, " ").toLocaleLowerCase();
+    definitionsOfTheDay.forEach((entry) => {
+        entry.category = entry.category || getCategory(entry);
+    });
+
+    const usedWords = new Set(definitionsOfTheDay.map((entry) => entry.word.toLowerCase()));
+    let englishCount = definitionsOfTheDay.filter((entry) => entry.category === "English").length;
+    if (Array.isArray(window.dixkonaryExtraEntries)) {
+        for (const entry of window.dixkonaryExtraEntries) {
+            if (englishCount >= 1000) break;
+            const normalizedWord = entry.word.toLowerCase();
+            if (usedWords.has(normalizedWord)) continue;
+            definitionsOfTheDay.push({ ...entry, category: "English" });
+            usedWords.add(normalizedWord);
+            englishCount += 1;
+        }
     }
 
-    // Deduplicate and assign clean categories
-    const uniqueWords = new Set();
-    const uniqueDefinitions = new Set();
-    let uniqueCount = 0;
-    for (const entry of definitionsOfTheDay) {
-        // Strip any accidental colon heading prefix
-        entry.word = entry.word.replace(/^(School|Science|Maths|Everyday|History|Geography|Technology|English|AI):\s*/i, "").trim();
-        const norm = normalizeDictionaryWord(entry.word);
-        const normalizedDefinition = entry.def.trim().replace(/\s+/g, " ").toLocaleLowerCase();
-        if (uniqueWords.has(norm) || uniqueDefinitions.has(normalizedDefinition)) continue;
-        uniqueWords.add(norm);
-        uniqueDefinitions.add(normalizedDefinition);
-        entry.category = getCategory(entry);
-        definitionsOfTheDay[uniqueCount] = entry;
-        uniqueCount += 1;
-    }
-    definitionsOfTheDay.length = uniqueCount;
-
-    const generatedTopics = {
-        AI: [
-            "activation function", "adversarial example", "AI benchmark", "AI evaluation", "AI ethics",
-            "AI safety", "attention mechanism", "backpropagation", "bias audit", "calibration",
-            "classification", "clustering", "computer vision", "convolutional network", "data augmentation",
-            "data leakage", "decision tree", "diffusion model", "embedding", "explainable AI",
-            "foundation model", "gradient descent", "in-context learning", "language model",
-            "loss function", "machine translation", "model card", "model drift", "named entity recognition",
-            "natural language processing", "neural network", "object detection", "overfitting",
-            "pretraining", "prompt injection", "reinforcement learning", "retrieval-augmented generation",
-            "robotics", "semantic search", "speech recognition", "speech synthesis", "synthetic data",
-            "tokenization", "transfer learning", "transformer", "validation set", "vision-language model",
-            "Anthropic anxiety", "Claude refusal", "Mistral espresso", "Le Chat swagger", "constitutional crisis"
-        ],
-        Technology: [
-            "accessibility", "API", "backup", "Bluetooth", "browser", "cache", "cloud storage", "CSS",
-            "cybersecurity", "database", "debugging", "digital privacy", "Ethernet", "file format",
-            "firewall", "Git", "HTML", "internet", "JavaScript", "keyboard shortcut", "Linux",
-            "operating system", "open-source software", "password manager", "Python", "router",
-            "search engine", "screen reader", "server", "spreadsheet", "USB", "version control",
-            "web browser", "web design", "Wi-Fi", "wireless network"
-        ],
-        Science: [
-            "adaptation", "atom", "biodiversity", "cell", "chemical reaction", "circuit", "climate",
-            "ecosystem", "electric current", "energy transfer", "evolution", "force", "fossil",
-            "food web", "gene", "gravity", "immune system", "isotope", "light", "magnetism",
-            "microorganism", "molecule", "osmosis", "photosynthesis", "planet", "respiration",
-            "rock cycle", "sound wave", "states of matter", "tectonic plate", "thermal insulation",
-            "variable", "velocity", "water cycle", "weather", "density"
-        ],
-        Maths: [
-            "algebra", "angle", "area", "average", "coordinate", "decimal", "equation", "factor",
-            "fraction", "function", "geometry", "graph", "integer", "mean", "median", "mode",
-            "multiple", "negative number", "percentage", "perimeter", "place value", "probability",
-            "prime number", "ratio", "sequence", "symmetry", "transformation", "unit conversion",
-            "variable", "volume", "Pythagoras theorem", "standard form", "rounding", "statistics"
-        ],
-        English: [
-            "adjective", "adverb", "alliteration", "allusion", "apostrophe", "assonance", "clause",
-            "conjunction", "connotation", "dialogue", "enjambment", "foreshadowing", "grammar",
-            "hyperbole", "imagery", "irony", "metaphor", "narrator", "onomatopoeia", "oxymoron",
-            "paragraph", "personification", "persuasive writing", "punctuation", "register", "rhyme",
-            "sentence", "simile", "stanza", "subordinate clause", "synonym", "tense", "verb",
-            "vocabulary", "voice", "word class"
-        ],
-        School: [
-            "assembly", "bookwork", "class register", "classroom clock", "cover lesson", "detention",
-            "form tutor", "homework planner", "lanyard", "lesson change", "lunch queue", "locker",
-            "lost property", " PE kit", "permission slip", "pencil case", "reading book", "revision card",
-            "safeguarding", "school bell", "school bag", "school canteen", "school trip",
-            "science goggles", "Sparx Maths", "Sparx bookwork check", "Sparx homework", "Sparx target", "Sparx streak", "student planner", "supply teacher", "timetable",
-            "uniform rule", "wet break", "worksheet", "Year 7"
-        ],
-        "Vocaloid & Music": [
-            "arrangement", "bass line", "beat", "chorus", "cover song", "dance break", "demo",
-            "duet", "earworm", "fan playlist", "harmony", "instrumental", "Kaai Yuki", "Kagamine Len",
-            "Kagamine Rin", "KAITO", "Kasane Teto", "key change", "lyrics", "MEIKO", "melody",
-            "Mitchie M", "music video", "NayutalieN", "producer", "rhythm game", " remix",
-            "soundtrack", "Synthesizer V", "tempo", "UTAU", "vocal range", "voicebank",
-            "Vocaloid tuning", "virtual singer", "wowaka", "Inabakumori"
-        ],
-        Everyday: [
-            "alarm clock", "backpack", "bicycle", "bus stop", "calendar", "charger", "cup of tea",
-            "door key", "family group chat", "headphones", "houseplant", "kettle", "laundry basket",
-            "library card", "lunchbox", "missing sock", "mobile phone", "rainy umbrella", "recipe",
-            "reusable bag", "shopping list", "snack cupboard", "weekend", "water bottle", "weather app",
-            "window seat", "workout plan", "toaster", "remote control", "train journey"
-        ],
-        History: [
-            "ancient Egypt", "ancient Greece", "ancient China", "archaeology", "castle", "civil rights",
-            "colonisation", "historical source", "Industrial Revolution", "iron age", "medieval town",
-            "migration history", "printing press", "Roman Britain", "Silk Road", "suffragettes",
-            "the abolition movement", "the Maya", "the Renaissance", "the Roman Empire",
-            "the Victorian era", "the First World War", "the Second World War", "timeline",
-            "trade route", "oral history", "local history", "historical map", "museum artefact"
-        ],
-        Geography: [
-            "biome", "coastline", "contour line", "desert", "earthquake", "fieldwork", "flood risk",
-            "forest", "glacier", "grid reference", "land use", "latitude", "longitude", "map scale",
-            "migration", "mountain range", "national park", "population density", "river basin",
-            "rural settlement", "urban area", "volcano", "water cycle", "weather front",
-            "coastal erosion", "climate zone", "renewable energy", "ecosystem", "island", "trade"
-        ]
-    };
-    const generatedContexts = [
-        "during a classroom activity", "in a revision session", "on a rainy Monday",
-        "during a group project", "in a practical lesson", "on a school trip",
-        "while checking a worked example", "in a library study session", "during a lunchtime club",
-        "while preparing a presentation", "in a beginner's guide", "during a careful experiment",
-        "on a field visit", "while solving a puzzle", "in a notebook example",
-        "during a team challenge", "while planning a project", "in a real-world example",
-        "during a question-and-answer session", "while reviewing evidence",
-        "in a short practice task", "during a creative activity", "while comparing two examples",
-        "in a step-by-step explanation", "during an end-of-term recap",
-        "while making a labelled diagram", "in a study group discussion",
-        "during an unexpected timetable change", "while organising class notes",
-        "in a helpful demonstration", "during a quiet reading break",
-        "while preparing for a quiz", "in a classroom discussion",
-        "during a hands-on challenge", "while checking the details",
-        "in an everyday situation"
+    const aiConcepts = [
+        "AI model", "language model", "neural network", "training data", "test data",
+        "prompt", "token", "embedding", "vector search", "classifier", "image model",
+        "speech model", "translation model", "recommendation system", "AI agent",
+        "tool calling", "retrieval system", "fine-tuning", "model evaluation",
+        "data labelling", "synthetic data", "computer vision", "speech recognition",
+        "text generation", "machine learning", "decision tree", "reinforcement learning",
+        "model safety", "AI benchmark", "context window", "reasoning model"
     ];
-    const generatedDefinitionTemplates = {
-        AI: [
-            (word, context) => `${word}, an AI concept studied ${context}`,
-            (word, context) => `${word}, a model method explored ${context}`,
-            (word, context) => `${word}, an AI technique practised ${context}`,
-            (word, context) => `${word}, a machine-learning idea discussed ${context}`
-        ],
-        Technology: [
-            (word, context) => `${word}, a digital tool or concept used ${context}`,
-            (word, context) => `${word}, a technology idea explored ${context}`,
-            (word, context) => `${word}, a computer topic practised ${context}`,
-            (word, context) => `${word}, a useful digital method discussed ${context}`
-        ],
-        Science: [
-            (word, context) => `${word}, a science concept explored ${context}`,
-            (word, context) => `${word}, a scientific process studied ${context}`,
-            (word, context) => `${word}, a natural-world topic investigated ${context}`,
-            (word, context) => `${word}, a science idea practised ${context}`
-        ],
-        Maths: [
-            (word, context) => `${word}, a maths idea practised ${context}`,
-            (word, context) => `${word}, a number skill explored ${context}`,
-            (word, context) => `${word}, a calculation method used ${context}`,
-            (word, context) => `${word}, a mathematical topic studied ${context}`
-        ],
-        English: [
-            (word, context) => `${word}, a reading or writing term used ${context}`,
-            (word, context) => `${word}, a language feature studied ${context}`,
-            (word, context) => `${word}, a grammar idea practised ${context}`,
-            (word, context) => `${word}, a literary technique explored ${context}`
-        ],
-        School: [
-            (word, context) => `${word}, a part of school life during ${context}`,
-            (word, context) => `${word}, a classroom term used ${context}`,
-            (word, context) => `${word}, a school routine or resource for ${context}`,
-            (word, context) => `${word}, a school-life idea discussed ${context}`
-        ],
-        "Vocaloid & Music": [
-            (word, context) => `${word}, a music term explored ${context}`,
-            (word, context) => `${word}, a song or performance idea for ${context}`,
-            (word, context) => `${word}, a music-making concept studied ${context}`,
-            (word, context) => `${word}, a sound or rhythm topic practised ${context}`
-        ],
-        Everyday: [
-            (word, context) => `${word}, an everyday item or idea seen ${context}`,
-            (word, context) => `${word}, a familiar daily-life topic for ${context}`,
-            (word, context) => `${word}, an ordinary object used ${context}`,
-            (word, context) => `${word}, an everyday routine or item during ${context}`
-        ],
-        History: [
-            (word, context) => `${word}, a past event or source discussed ${context}`,
-            (word, context) => `${word}, a historical topic studied ${context}`,
-            (word, context) => `${word}, evidence about the past examined ${context}`,
-            (word, context) => `${word}, a history subject explored ${context}`
-        ],
-        Geography: [
-            (word, context) => `${word}, a place or environment studied ${context}`,
-            (word, context) => `${word}, a geographic feature explored ${context}`,
-            (word, context) => `${word}, a mapping or fieldwork topic for ${context}`,
-            (word, context) => `${word}, a human or physical geography idea during ${context}`
-        ]
-    };
-
-    const categoryCounts = new Map();
-    for (const entry of definitionsOfTheDay) {
-        categoryCounts.set(entry.category, (categoryCounts.get(entry.category) || 0) + 1);
+    const aiApplications = [
+        "sorting science notes", "summarising a long article", "finding spelling mistakes",
+        "organising a revision plan", "explaining a maths method", "captioning a picture",
+        "transcribing a lesson recording", "translating a short message", "finding a useful source",
+        "spotting duplicate files", "making a study quiz", "suggesting a playlist",
+        "answering a support question", "checking a spreadsheet", "searching class notes",
+        "drafting a polite email", "recognising plant photos", "reading a chart",
+        "grouping similar questions", "recommending a book", "detecting a typo",
+        "planning a project", "describing a diagram", "generating practice questions",
+        "finding a pattern in results", "turning speech into text", "matching a word to a definition",
+        "sorting library books", "summarising meeting notes", "finding a topic in a document"
+    ];
+    let aiCount = definitionsOfTheDay.filter((entry) => entry.category === "AI").length;
+    const aiNotes = [
+        (concept, application) => `${concept} can help with ${application}; it still needs checked sources and a human who remembers what the assignment asked.`,
+        (concept, application) => `A practical ${concept} example: ${application}. It is a tool, not an oracle with a tiny server-room hat.`,
+        (concept, application) => `Use ${concept} for ${application} as a starting point, then verify the result before it confidently joins your homework.`,
+        (concept, application) => `${concept} meets ${application}: useful when checked, suspicious when it says it finished everything in 0.02 seconds.`
+    ];
+    for (const concept of aiConcepts) {
+        for (const application of aiApplications) {
+            if (aiCount >= 1000) break;
+            const word = `AI ${concept}: ${application}`;
+            if (usedWords.has(word.toLowerCase())) continue;
+            const index = definitionsOfTheDay.length;
+            definitionsOfTheDay.push({
+                word,
+                displayWord: application,
+                def: aiNotes[index % aiNotes.length](concept, application),
+                category: "AI"
+            });
+            usedWords.add(word.toLowerCase());
+            aiCount += 1;
+        }
+        if (aiCount >= 1000) break;
     }
-    for (const [category, topics] of Object.entries(generatedTopics)) {
-        let count = categoryCounts.get(category) || 0;
-        const templates = generatedDefinitionTemplates[category];
-        for (const topic of topics) {
-            for (const context of generatedContexts) {
+
+    const schoolSituations = [
+        "Monday morning", "wet break", "cover lesson", "school trip", "revision week",
+        "the lunch queue", "a room change", "form time", "the last lesson", "club afternoon",
+        "PE day", "a surprise quiz", "the science lab", "the library", "the bus ride",
+        "a group project", "parents evening", "a fire drill", "sports day", "the art room",
+        "the computer room", "a substitute lesson", "the school assembly", "the walk to class",
+        "the end of term", "a rainy lunchtime", "the first week of Year 7", "a late start",
+        "the homework deadline", "a forgotten planner", "the school canteen", "a timetable change"
+    ];
+    const schoolTopics = [
+        "the missing pencil", "the spare ruler", "the mystery worksheet", "the full school bag",
+        "the planner check", "the lost jumper", "the squeaky chair", "the slow printer",
+        "the classroom clock", "the borrowed pen", "the locker combination", "the uncharged tablet",
+        "the last library book", "the packed lunch", "the misplaced PE kit", "the noisy corridor",
+        "the extra glue stick", "the wobbly desk", "the forgotten water bottle", "the group chat",
+        "the classroom plant", "the maths calculator", "the science goggles", "the art supplies",
+        "the spelling test", "the late homework", "the register answer", "the spare notebook",
+        "the queue for lunch", "the bell going early"
+    ];
+    let schoolCount = definitionsOfTheDay.filter((entry) => entry.category === "School").length;
+    const schoolNotes = [
+        (situation, topic) => `At ${situation}, ${topic} becomes an important character in the day's highly unofficial school sitcom.`,
+        (situation, topic) => `A classic ${situation} moment: ${topic} appears exactly when everyone thought the plot was over.`,
+        (situation, topic) => `During ${situation}, remember ${topic}; it may be the only thing keeping this school-day side quest on schedule.`,
+        (situation, topic) => `${situation} plus ${topic} equals a perfectly ordinary school story that will be retold at lunch.`
+    ];
+    for (const situation of schoolSituations) {
+        for (const topic of schoolTopics) {
+            if (schoolCount >= 1000) break;
+            const word = `School ${situation}: ${topic}`;
+            if (usedWords.has(word.toLowerCase())) continue;
+            const index = definitionsOfTheDay.length;
+            definitionsOfTheDay.push({
+                word,
+                displayWord: topic,
+                def: schoolNotes[index % schoolNotes.length](situation, topic),
+                category: "School"
+            });
+            usedWords.add(word.toLowerCase());
+            schoolCount += 1;
+        }
+        if (schoolCount >= 1000) break;
+    }
+
+    function fillCategoryToThousand(category, concepts, situations, createDefinition) {
+        let count = definitionsOfTheDay.filter((entry) => entry.category === category).length;
+        for (const concept of concepts) {
+            for (const situation of situations) {
                 if (count >= 1000) break;
-                const contextLabel = context
-                    .replace(/^(?:during|in|on|while|at|for)\s+/i, "")
-                    .replace(/^(?:checking|solving|planning|comparing|reviewing|organising|making|preparing for)\s+/i, "")
-                    .replace(/^(?:a|an|the|two)\s+/i, "");
-                const word = `${topic} (${contextLabel})`;
-                const normalizedWord = normalizeDictionaryWord(word);
-                if (uniqueWords.has(normalizedWord)) continue;
-                const definition = templates[count % templates.length](topic, context);
-                const normalizedDefinition = normalizeDictionaryWord(definition);
-                if (uniqueDefinitions.has(normalizedDefinition)) continue;
-                definitionsOfTheDay.push({ word, def: definition, category });
-                uniqueWords.add(normalizedWord);
-                uniqueDefinitions.add(normalizedDefinition);
+                const word = `${category}: ${concept} — ${situation}`;
+                const normalizedWord = word.toLowerCase();
+                if (usedWords.has(normalizedWord)) continue;
+                definitionsOfTheDay.push({
+                    word,
+                    displayWord: situation,
+                    def: createDefinition(concept, situation),
+                    category
+                });
+                usedWords.add(normalizedWord);
                 count += 1;
             }
             if (count >= 1000) break;
         }
-        categoryCounts.set(category, count);
     }
+
+    fillCategoryToThousand("Science", [
+        "cells", "ecosystems", "forces", "energy", "atoms", "molecules", "chemical reactions",
+        "electricity", "waves", "light", "sound", "materials", "states of matter", "plants",
+        "human biology", "microbes", "genetics", "evolution", "adaptation", "food webs",
+        "climate", "weather", "rocks", "fossils", "space", "gravity", "magnetism",
+        "circuits", "acids and alkalis", "separation methods", "earth science", "lab safety"
+    ], [
+        "a classroom experiment", "a fieldwork notebook", "a microscope slide", "a fair test",
+        "a surprising result", "a labelled diagram", "a practical lesson", "a science question",
+        "a measurement", "a graph of results", "a revision card", "a model ecosystem",
+        "a lab report", "a curious student", "a muddy field trip", "a controlled variable",
+        "a magnifying glass", "a beaker of water", "a very careful observation",
+        "an unexpected hypothesis", "a science fair display", "a safe investigation",
+        "a sample under glass", "a class discussion", "a results table", "a change over time",
+        "a data check", "a nature walk", "a science quiz", "a question worth testing",
+        "a result worth repeating", "a sensible conclusion"
+    ], (concept, situation) => `${concept} meets ${situation}: observe carefully, record the evidence, and never let the goggles become a fashion substitute for eye protection.`);
+
+    fillCategoryToThousand("Maths", [
+        "fractions", "decimals", "percentages", "negative numbers", "ratio", "proportion",
+        "algebra", "equations", "sequences", "coordinates", "graphs", "angles", "triangles",
+        "circles", "area", "perimeter", "volume", "symmetry", "transformations", "probability",
+        "averages", "prime numbers", "factors", "multiples", "powers", "roots", "BIDMAS",
+        "Pythagoras", "measurement", "conversions", "estimation", "statistics"
+    ], [
+        "a Sparx question", "a worked example", "a calculator check", "a number line",
+        "a revision sheet", "a tricky word problem", "a graph paper grid", "a mental-maths warm-up",
+        "a missing x", "a very long calculation", "a classroom whiteboard", "a set of test scores",
+        "a shopping discount", "a recipe to scale", "a right-angled triangle", "a geometry diagram",
+        "a table of values", "a sequence with a mystery rule", "a probability experiment",
+        "a ruler with attitude", "an estimate before the answer", "a question with too many brackets",
+        "a fraction that needs simplifying", "a percentage on a price tag", "a units conversion",
+        "a maths club puzzle", "a practice test", "a suspiciously neat answer",
+        "a class explanation", "a bookwork check", "a number pattern", "a calculator-free challenge"
+    ], (concept, situation) => `${concept} in ${situation}: write down the steps, check the units, and politely ask the missing x to return.`);
+
+    fillCategoryToThousand("Vocaloid & Music", [
+        "Hatsune Miku", "Kagamine Rin", "Kagamine Len", "Megurine Luka", "KAITO", "MEIKO",
+        "GUMI", "Kaai Yuki", "Kasane Teto", "v flower", "Yuzuki Yukari", "Otomachi Una",
+        "Inabakumori", "Kikuo", "Mitchie M", "NayutalieN", "Giga", "Chinozo", "wowaka",
+        "Hachi", "samfree", "LamazeP", "Crusher-P", "Neru", "PinocchioP", "Eve",
+        "voicebanks", "Vocaloid tuning", "UTAU", "Synthesizer V", "CeVIO", "Project DIVA"
+    ], [
+        "a catchy chorus", "a late-night playlist", "a rhythm-game chart", "a virtual concert",
+        "a cover arrangement", "a melody stuck in your head", "a harmony experiment",
+        "a producer's demo", "a setlist idea", "a keyboard practice session",
+        "a fan-made illustration", "a synthesised vocal", "a dramatic key change",
+        "a dance break", "a music video storyboard", "a headphone test",
+        "a chorus everyone knows", "a studio session", "a song recommendation",
+        "a carefully tuned note", "a beat drop", "a surprisingly emotional bridge",
+        "a school talent show", "a voicebank comparison", "a fan playlist",
+        "a concert lightstick", "a remix idea", "a lyric video",
+        "a train commute with headphones", "a collaborative cover",
+        "a practice run", "an encore that is definitely one more song"
+    ], (artist, situation) => `${artist} and ${situation}: one more listen is allowed, but the playlist has already filed for an extension.`);
+
+    fillCategoryToThousand("Everyday", [
+        "the toaster", "the kettle", "the phone charger", "the missing sock", "the alarm clock",
+        "the school bag", "the pencil case", "the bus stop", "the rainy umbrella", "the fridge",
+        "the laundry basket", "the houseplant", "the pet", "the remote control", "the shopping list",
+        "the snack cupboard", "the bicycle", "the headphones", "the calendar", "the water bottle",
+        "the front door key", "the weekend", "the family group chat", "the tiny desk",
+        "the overfull bookshelf", "the mystery cable", "the comfy chair", "the packed lunch",
+        "the squeaky floorboard", "the house keys", "the reusable bag", "the last biscuit"
+    ], [
+        "on Monday morning", "just before leaving home", "during a rainy afternoon",
+        "when everyone is in a hurry", "at the end of a long day", "during a tiny household mystery",
+        "before breakfast", "after a very ambitious plan", "when the battery is at one percent",
+        "during a tidy-up", "on a quiet weekend", "when guests are nearly here",
+        "after the shopping trip", "when the bus is almost due", "during a snack emergency",
+        "in the middle of a video call", "after a short nap", "when nobody remembers who moved it",
+        "on the way out", "while the kettle boils", "at precisely the inconvenient moment",
+        "when it is absolutely not lost", "after searching the same place twice",
+        "during an attempt to be organised", "when the weather changes its mind",
+        "before the alarm has finished ringing", "at the bottom of the bag",
+        "when the room is already tidy", "during an unexpected power cut",
+        "after saying 'I'll do it in a minute'", "on a perfectly ordinary Tuesday",
+        "when the last biscuit is involved"
+    ], (thing, situation) => `${thing} ${situation}: a small everyday event with the dramatic timing of a season finale.`);
+
+    fillCategoryToThousand("History", [
+        "ancient Egypt", "ancient Greece", "the Roman Empire", "the Indus Valley",
+        "the Maya", "medieval towns", "the Silk Road", "the Renaissance", "the printing press",
+        "the English Civil War", "the Industrial Revolution", "the Victorian era",
+        "the history of medicine", "the history of flight", "early farming",
+        "the Age of Exploration", "the abolition movement", "the suffragettes",
+        "the First World War", "the Second World War", "post-war Britain",
+        "the history of communication", "the history of transport", "archaeology",
+        "historical sources", "oral history", "castles", "ancient China",
+        "the transatlantic railway", "the history of computing", "the history of schools",
+        "local history"
+    ], [
+        "a primary source", "a museum visit", "a timeline", "an artefact label",
+        "a historian's question", "a map from the period", "a classroom debate",
+        "a diary entry", "a newspaper report", "an archaeological dig",
+        "a revision card", "a history project", "a family story",
+        "a change over time", "a cause and consequence", "a comparison of evidence",
+        "a portrait in a gallery", "a recovered object", "a town walking tour",
+        "a historical photograph", "a library archive", "a source reliability check",
+        "a school display", "a question about everyday life", "a story of invention",
+        "a documentary clip", "a historical recipe", "a castle model",
+        "a local landmark", "a date on a timeline", "a class presentation",
+        "a very old shoe"
+    ], (topic, source) => `${topic} through ${source}: ask who made the evidence, when it was made, and whether the museum gift shop has a snack.`);
+
+    fillCategoryToThousand("Geography", [
+        "rivers", "coasts", "mountains", "volcanoes", "earthquakes", "weather",
+        "climate zones", "urban areas", "rural communities", "population",
+        "migration", "trade", "development", "ecosystems", "biomes", "map skills",
+        "grid references", "contour lines", "land use", "sustainable cities",
+        "renewable energy", "water resources", "global supply chains", "fieldwork",
+        "the water cycle", "glaciers", "deserts", "forests", "islands",
+        "national parks", "coastal erosion", "local geography"
+    ], [
+        "a fieldwork sketch", "a map-reading challenge", "a weather station",
+        "a river investigation", "a coastal walk", "a town planning meeting",
+        "a globe in the classroom", "a data-rich atlas", "a field trip",
+        "a land-use survey", "a climate graph", "a grid-reference quiz",
+        "a satellite image", "a landscape model", "a case study",
+        "a journey to school", "a flood-risk map", "a mountain profile",
+        "a beach transect", "a compass bearing", "a population chart",
+        "a local high street", "a sustainable travel plan", "a natural hazard drill",
+        "a water-use diary", "a comparison between places", "a map with a missing legend",
+        "a class presentation", "a geography notebook", "a very windy hill",
+        "a question about where things are", "a scale-bar calculation"
+    ], (topic, activity) => `${topic} in ${activity}: use the map, check the scale, and never trust a compass that is sitting next to a giant magnet.`);
+
+    fillCategoryToThousand("Technology", [
+        "web browsers", "computer networks", "databases", "programming", "web accessibility",
+        "cybersecurity", "user interfaces", "search engines", "cloud storage",
+        "operating systems", "computer hardware", "digital images", "file formats",
+        "the internet", "wireless networks", "Ethernet", "sensors", "robotics",
+        "assistive technology", "data privacy", "open-source software",
+        "version control", "HTML", "CSS", "JavaScript", "Python", "automation",
+        "digital maps", "video calls", "computer backups", "password managers",
+        "ethical technology"
+    ], [
+        "a school laptop", "a website project", "a slow connection", "a helpful error message",
+        "a keyboard shortcut", "a safe password", "an accessible page",
+        "a computer lab", "a file that needs backing up", "a group coding project",
+        "a Wi-Fi router", "an Ethernet cable", "a search for reliable information",
+        "a privacy setting", "a software update", "a debugging session",
+        "a broken link", "a screen reader test", "a tidy folder structure",
+        "a tiny robot", "a spreadsheet", "a browser tab collection",
+        "a pretend app", "a device battery", "a data visualisation",
+        "a file name with spaces", "a school presentation", "a shared document",
+        "an online safety lesson", "a forgotten login", "a computer that needs restarting",
+        "a very patient user"
+    ], (topic, situation) => `${topic} and ${situation}: technology works best when it helps a person, protects their data, and does not require turning the router into a percussion instrument.`);
 
     let favourites = new Set();
     try {
@@ -1662,24 +1636,7 @@ function initDefinitionOfTheDay() {
     }
 
     function getDisplayWord(entry) {
-        // Strip any category heading prefix so words always display purely and without a heading
-        return entry.word.replace(/^(School|Science|Maths|Everyday|History|Geography|Technology|English|AI):\s*/i, "").trim();
-    }
-
-    function getShortDefinition(entry) {
-        let definition = entry.def.trim().replace(/\s+/g, " ");
-        definition = definition.split(/(?:[.!?]\s+|;\s+|,\s+(?=(?:which|while|because|so|but|and|including|making|giving|often|also)\b))/i)[0];
-        definition = definition.replace(/^(?:A|An|The)\s+/i, "").replace(/[.!?;,:]+$/, "");
-        const words = definition.split(/\s+/);
-        if (words.length > 12) {
-            const conjunctionIndex = words.slice(0, 12).findIndex((word, index) =>
-                index >= 5 && /^(?:and|but|which|because|while|so|although|including|making|giving)$/i.test(word)
-            );
-            const shortWords = words.slice(0, conjunctionIndex > 0 ? conjunctionIndex : 12);
-            const shortDefinition = shortWords.join(" ").replace(/[,:;—-]+$/, "");
-            return conjunctionIndex > 0 ? shortDefinition : `${shortDefinition}…`;
-        }
-        return definition;
+        return entry.displayWord || entry.word;
     }
 
     function toggleFavourite(entry) {
@@ -1696,14 +1653,14 @@ function initDefinitionOfTheDay() {
     function showEntry(entry) {
         currentEntry = entry;
         if (dotdWord) dotdWord.textContent = getDisplayWord(entry);
-        if (dotdDef) dotdDef.textContent = getShortDefinition(entry);
+        if (dotdDef) dotdDef.textContent = entry.def;
         if (dotdBadge) dotdBadge.textContent = entry.category;
         updateFavouriteButton(dotdFavouriteBtn, entry);
     }
 
     function showHomeWidget(entry) {
         if (homeWord) homeWord.textContent = getDisplayWord(entry);
-        if (homeDef) homeDef.textContent = getShortDefinition(entry);
+        if (homeDef) homeDef.textContent = entry.def;
         if (homeDayBadge) homeDayBadge.textContent = entry.category;
     }
 
@@ -1724,7 +1681,10 @@ function initDefinitionOfTheDay() {
     });
 
     dotdFavouriteBtn?.addEventListener("click", () => {
-        if (currentEntry) toggleFavourite(currentEntry);
+        if (currentEntry) {
+            toggleFavourite(currentEntry);
+            if (dictGrid) renderDictionary();
+        }
     });
 
     copyBtn?.addEventListener("click", async () => {
@@ -1773,18 +1733,6 @@ function initDefinitionOfTheDay() {
             }
         }
 
-        function setupAutoLoadObserver() {
-            if (!("IntersectionObserver" in window) || !showMoreBtn) return;
-            loadObserver = new IntersectionObserver((entries) => {
-                const [target] = entries;
-                if (!target.isIntersecting || !autoLoadArmed || !isSupportedAutoLoadConnection()) return;
-                autoLoadArmed = false;
-                loadMoreEntries();
-                setTimeout(() => { autoLoadArmed = true; }, 350);
-            }, { rootMargin: "250px 0px" });
-            loadObserver.observe(showMoreBtn);
-        }
-
         function loadMoreEntries() {
             visibleCount += showMoreCount;
             renderDictionary();
@@ -1797,10 +1745,9 @@ function initDefinitionOfTheDay() {
         function renderDictionary() {
             dictGrid.innerHTML = "";
             const filtered = definitionsOfTheDay.filter((item) => {
-                const displayWord = getDisplayWord(item);
-                const matchesLetter = activeLetter === "ALL" || displayWord.toUpperCase().startsWith(activeLetter);
+                const matchesLetter = activeLetter === "ALL" || item.word.toUpperCase().startsWith(activeLetter);
                 const query = searchQuery.toLowerCase().trim();
-                const matchesSearch = !query || displayWord.toLowerCase().includes(query) || item.def.toLowerCase().includes(query);
+                const matchesSearch = !query || item.word.toLowerCase().includes(query) || item.def.toLowerCase().includes(query);
                 const matchesCategory = activeCategory === "ALL" || item.category === activeCategory;
                 const matchesFavourite = !favouritesOnly || isFavourite(item);
                 return matchesLetter && matchesSearch && matchesCategory && matchesFavourite;
@@ -1845,7 +1792,7 @@ function initDefinitionOfTheDay() {
                 category.textContent = item.category;
                 const definition = document.createElement("p");
                 definition.className = "dict-entry-def";
-                definition.textContent = getShortDefinition(item);
+                definition.textContent = item.def;
                 card.append(cardHeader, category, definition);
                 card.addEventListener("click", () => {
                     showEntry(item);
@@ -1859,16 +1806,16 @@ function initDefinitionOfTheDay() {
             }
             if (showMoreBtn) {
                 showMoreBtn.hidden = visibleCount >= filtered.length;
+                showMoreBtn.textContent = `show more (${Math.min(showMoreCount, filtered.length - visibleCount)})`;
             }
         }
 
         renderDictionary();
-        setupAutoLoadObserver();
-        updateAutoLoadStatus();
 
         dictSearchInput?.addEventListener("input", (e) => {
             searchQuery = e.target.value;
-            visibleCount = 50;
+            visibleCount = showMoreCount;
+            autoLoadArmed = true;
             renderDictionary();
         });
 
@@ -1877,34 +1824,56 @@ function initDefinitionOfTheDay() {
                 alphaButtons.forEach((b) => b.classList.remove("active"));
                 btn.classList.add("active");
                 activeLetter = btn.dataset.letter || "ALL";
-                visibleCount = 50;
+                visibleCount = showMoreCount;
+                autoLoadArmed = true;
                 renderDictionary();
             });
         });
 
-        categoryButtons.forEach((btn) => {
-            btn.addEventListener("click", () => {
-                categoryButtons.forEach((b) => {
-                    b.classList.remove("active");
-                    b.setAttribute("aria-pressed", "false");
+        categoryButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                categoryButtons.forEach((categoryButton) => {
+                    categoryButton.classList.remove("active");
+                    categoryButton.setAttribute("aria-pressed", "false");
                 });
-                btn.classList.add("active");
-                btn.setAttribute("aria-pressed", "true");
-                activeCategory = btn.dataset.category || "ALL";
-                visibleCount = 50;
+                button.classList.add("active");
+                button.setAttribute("aria-pressed", "true");
+                activeCategory = button.dataset.category || "ALL";
+                visibleCount = showMoreCount;
+                autoLoadArmed = true;
                 renderDictionary();
             });
         });
 
         favouritesToggle?.addEventListener("click", () => {
             favouritesOnly = !favouritesOnly;
-            favouritesToggle.classList.toggle("active", favouritesOnly);
             favouritesToggle.setAttribute("aria-pressed", String(favouritesOnly));
-            visibleCount = 50;
+            favouritesToggle.textContent = favouritesOnly ? "♥ showing favourites" : "♡ show favourites";
+            visibleCount = showMoreCount;
+            autoLoadArmed = true;
             renderDictionary();
         });
 
-        showMoreBtn?.addEventListener("click", loadMoreEntries);
+        showMoreBtn?.addEventListener("click", () => {
+            autoLoadArmed = true;
+            loadMoreEntries();
+        });
+
+        if (showMoreBtn && "IntersectionObserver" in window) {
+            loadObserver = new IntersectionObserver(([entry]) => {
+                if (!entry.isIntersecting) {
+                    autoLoadArmed = true;
+                    return;
+                }
+                if (autoLoadArmed && isSupportedAutoLoadConnection() && !showMoreBtn.hidden) {
+                    autoLoadArmed = false;
+                    loadMoreEntries();
+                }
+            }, { rootMargin: "200px 0px" });
+            loadObserver.observe(showMoreBtn);
+        }
+
+        updateAutoLoadStatus();
         window.addEventListener("online", updateAutoLoadStatus);
         window.addEventListener("offline", updateAutoLoadStatus);
         networkConnection?.addEventListener?.("change", updateAutoLoadStatus);

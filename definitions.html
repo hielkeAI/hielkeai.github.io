@@ -6,7 +6,6 @@
     <title>Dictionary - Hielke AI</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/webp" href="favicon.webp">
-    <script src="dictionary-extra.js" defer></script>
     <script src="site.js" defer></script>
 </head>
 <body>
@@ -66,15 +65,16 @@
 
         <section class="dictionary-browser panel" aria-labelledby="dict-browse-heading">
             <h2 id="dict-browse-heading">Browse the Dictionary</h2>
-            <p class="stat-caption">Search, filter, or browse the entries. The extra vocabulary notes are playful, not formal dictionary definitions:</p>
+            <p class="stat-caption">Search, filter, or browse the entries. Each word or term has a short meaning:</p>
 
             <div class="dictionary-search-box">
-                <input type="search" id="dict-search" class="dictionary-search-input" placeholder="Search words or definitions (e.g. Claude, photosynthesis, Sparx Maths, Miku)..." aria-label="Search dictionary">
+                <input type="search" id="dict-search" class="dictionary-search-input" placeholder="Search words or definitions (e.g. Claude, Mistral, GPU, toaster, Miku)..." aria-label="Search dictionary">
             </div>
 
             <div id="dict-category-filters" class="dict-category-filters" role="group" aria-label="Filter by category">
                 <button type="button" class="dict-category-btn active" data-category="ALL" aria-pressed="true">all topics</button>
                 <button type="button" class="dict-category-btn" data-category="AI" aria-pressed="false">🤖 AI</button>
+                <button type="button" class="dict-category-btn" data-category="Technology" aria-pressed="false">💻 technology</button>
                 <button type="button" class="dict-category-btn" data-category="Science" aria-pressed="false">🔬 science</button>
                 <button type="button" class="dict-category-btn" data-category="Maths" aria-pressed="false">➗ maths</button>
                 <button type="button" class="dict-category-btn" data-category="English" aria-pressed="false">📚 English</button>
@@ -83,7 +83,6 @@
                 <button type="button" class="dict-category-btn" data-category="Everyday" aria-pressed="false">✨ everyday</button>
                 <button type="button" class="dict-category-btn" data-category="History" aria-pressed="false">🏺 history</button>
                 <button type="button" class="dict-category-btn" data-category="Geography" aria-pressed="false">🌍 geography</button>
-                <button type="button" class="dict-category-btn" data-category="Technology" aria-pressed="false">💻 technology</button>
             </div>
             <div class="dictionary-search-box dict-favourites-filter">
                 <button id="dict-favourites-toggle" class="secondary-button" type="button" aria-pressed="false">♡ show favourites</button>
